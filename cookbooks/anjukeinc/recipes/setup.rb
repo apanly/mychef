@@ -11,11 +11,11 @@ end
 ### setup users
 include_recipe "anjukeinc::users"
 
-### setup mysql
-include_recipe "anjukeinc::mysql"
-
 ### download tarball files
 include_recipe "anjukeinc::tarball"
+
+### setup mysql
+include_recipe "anjukeinc::mysql"
 
 ### setup php
 include_recipe "anjukeinc::php"

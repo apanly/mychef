@@ -3,10 +3,10 @@ execute "install php extension amqp" do
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",
           "tar zxvf #{node['anjukeinc']['php_amqp_tarball']}",
-          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_amqp_tarball'].gsub('.tar.gz', '')}",
+          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_amqp_tarball'].gsub('.tgz', '')}",
           "#{node['anjukeinc']['php_install_path']}/bin/phpize",
           "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config",
-          "make && name install"
+          "make && make install"
   ]
   command (cmds.join " ; ")
 end
@@ -16,10 +16,10 @@ execute "install php extension apc" do
   cmds = [ 
           "cd #{node['anjukeinc']['build_root']}",
           "tar zxvf #{node['anjukeinc']['php_apc_tarball']}",
-          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_apc_tarball'].gsub('.tar.gz', '')}",
+          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_apc_tarball'].gsub('.tgz', '')}",
           "#{node['anjukeinc']['php_install_path']}/bin/phpize",
           "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config",
-          "make && name install"
+          "make && make install"
   ]
   command (cmds.join " ; ")
 end
@@ -29,10 +29,10 @@ execute "install php extension memcache" do
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",
           "tar zxvf #{node['anjukeinc']['php_memcache_tarball']}",
-          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_memcache_tarball'].gsub('.tar.gz', '')}",
+          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_memcache_tarball'].gsub('.tgz', '')}",
           "#{node['anjukeinc']['php_install_path']}/bin/phpize",
           "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config",
-          "make && name install"
+          "make && make install"
   ]
   command (cmds.join " ; ")
 end
@@ -42,10 +42,10 @@ execute "install php extension msgpack" do
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",
           "tar zxvf #{node['anjukeinc']['php_msgpack_tarball']}",
-          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_msgpack_tarball'].gsub('.tar.gz', '')}",
+          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_msgpack_tarball'].gsub('.tgz', '')}",
           "#{node['anjukeinc']['php_install_path']}/bin/phpize",
           "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config",
-          "make && name install"
+          "make && make install"
   ]
   command (cmds.join " ; ")
 end
@@ -55,10 +55,10 @@ execute "install php extension redis" do
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",
           "tar zxvf #{node['anjukeinc']['php_redis_tarball']}",
-          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_redis_tarball'].gsub('.tar.gz', '')}",
+          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_redis_tarball'].gsub('.tgz', '')}",
           "#{node['anjukeinc']['php_install_path']}/bin/phpize",
           "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config",
-          "make && name install"
+          "make && make install"
   ]
   command (cmds.join " ; ")
 end
@@ -68,10 +68,10 @@ execute "install php extension solr" do
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",
           "tar zxvf #{node['anjukeinc']['php_solr_tarball']}",
-          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_solr_tarball'].gsub('.tar.gz', '')}",
+          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_solr_tarball'].gsub('.tgz', '')}",
           "#{node['anjukeinc']['php_install_path']}/bin/phpize",
           "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config",
-          "make && name install"
+          "make && make install"
   ]
   command (cmds.join " ; ")
 end
@@ -84,7 +84,7 @@ execute "install php extension php-zmq" do
           "cd php-zmq",
           "#{node['anjukeinc']['php_install_path']}/bin/phpize",
           "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config --with-zmq=#{node['anjukeinc']['zeromq_install_path']}",
-          "make && name install"
+          "make && make install"
   ]
   command (cmds.join " ; ")
 end

@@ -9,4 +9,5 @@ execute "install zero mq" do
           "./configure --prefix=#{node['anjukeinc']['zeromq_install_path']}",
           "make && make install"
   ]
+  command (cmds.join " ; ")
 end
