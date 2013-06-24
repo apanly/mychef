@@ -1,12 +1,12 @@
 # 开发环境搭建
 
 ## 首次启动
+把仓库拉下来
 ```
 $ git clone git@github.com:eyong4736/mychef.git
 $ cd mychef
 ```
-把仓库拉下来
-
+执行引导程序
 ```
 $ ./bootstrap.sh yyang
 ```
