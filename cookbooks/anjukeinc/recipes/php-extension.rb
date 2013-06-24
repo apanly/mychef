@@ -1,3 +1,36 @@
+execute "install php extension bcmath" do
+    user 'root'
+    cmds = [
+	    "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_tarball'].gsub('.tar.gz', '')}/ext/bcmath",
+	    "#{node['anjukeinc']['php_install_path']}/bin/phpize",
+	    "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config",
+	    "make && make install"
+    ]
+    command (cmds.join " ; ")
+end
+
+execute "install php extension gd" do
+    user 'root'
+    cmds = [
+            "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_tarball'].gsub('.tar.gz', '')}/ext/gd",
+            "#{node['anjukeinc']['php_install_path']}/bin/phpize",
+            "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config --with-jpeg-dir --with-png-dir --with-freetype-dir",
+            "make && make install"
+    ]
+    command (cmds.join " ; ")
+end
+
+execute "install php extension mbstring" do
+    user 'root'
+    cmds = [
+	    "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_tarball'].gsub('.tar.gz', '')}/ext/mbstring",
+	    "#{node['anjukeinc']['php_install_path']}/bin/phpize",
+	    "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config",
+	    "make && make install"
+    ]
+    command (cmds.join " ; ")
+end
+
 execute "install php extension amqp" do
   user 'root'
   cmds = [
