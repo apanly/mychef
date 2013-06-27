@@ -50,6 +50,5 @@ include_recipe "anjukeinc::php-extension"
 #template "jinpu nginx config" do
 #end
 
-#execute "init web font" do
-#
-#end
+### set up system font
+include_recipe "anjukeinc::font"
