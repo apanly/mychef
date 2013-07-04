@@ -29,26 +29,8 @@ include_recipe "anjukeinc::rabbitmq"
 ### setup php-extensions
 include_recipe "anjukeinc::php-extension"
 
-#template "php.ini" do
-#end
-
-#template "php extension config" do
-#end
-
-#template "php fpm" do
-#end
-
-#template "nginx config" do
-#end
-
-#template "anjuke nginx config" do
-#end
-
-#template "haozu nginx config" do
-#end
-
-#template "jinpu nginx config" do
-#end
+### setup config
+include_recipe "anjukeinc::config"
 
 ### set up system font
 include_recipe "anjukeinc::font"
