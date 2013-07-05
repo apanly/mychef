@@ -13,33 +13,24 @@ update_domain() {
     echo "done."
 }
 
-update_path() {
-    echo "setting code path config: $1..."
-    echo "default['anjukeinc']['codepath'] = '$1'" >> ./cookbooks/anjukeinc/attributes/default.rb
-    echo "done."
-}
-
 if [ $# -eq 0 ]
 then
     get_help
 fi
 
-while getopts d:p: val
+while getopts d: val
 do
     case $val in
         d)
 	    domain=$OPTARG;;
-	p)
-	    path=$OPTARG;;
         ?)
 	    get_help;;
     esac
 done
 
-if [ ! -z $domain ] && [ ! -z $path ]
+if [ ! -z $domain ]
 then
     update_domain $domain
-    update_path $path
 else
     get_help
 fi

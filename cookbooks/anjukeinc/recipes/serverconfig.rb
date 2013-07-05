@@ -1,19 +1,19 @@
 template "php.ini" do
-    path "#{default['anjukeinc']['php_install_path']}/lib/php.ini"
+    path "#{node['anjukeinc']['php_install_path']}/lib/php.ini"
     user root
     group root
     mode 00755
 end
 
 template "php-extension.conf" do
-    path "#{default['anjukeinc']['php_install_path']}/lib/php-ext.ini"
+    path "#{node['anjukeinc']['php_install_path']}/lib/php-ext.ini"
     user root
     group root
     mode 00755
 end
 
 template "php-fpm.conf" do
-    path "#{default['anjukeinc']['php_install_path']}/etc/php-fpm.conf"
+    path "#{node['anjukeinc']['php_install_path']}/etc/php-fpm.conf"
     user root
     group root
     mode 00755
@@ -31,6 +31,7 @@ template "anjuke.nginx.conf" do
     user root
     group root
     mode 00755
+    variables(:subdomain => "#{node['anjukeinc']['subdomain']}")
 end
 
 template "haozu.nginx.conf" do
@@ -38,6 +39,7 @@ template "haozu.nginx.conf" do
     user root
     group root
     mode 00755
+    variables(:subdomain => "#{node['anjukeinc']['subdomain']}")
 end
 
 template "jinpu.nginx.conf" do
@@ -45,6 +47,7 @@ template "jinpu.nginx.conf" do
     user root
     group root
     mode 00755
+    variables(:subdomain => "#{node['anjukeinc']['subdomain']}")
 end
 
 template "member.nginx.conf" do
@@ -52,6 +55,7 @@ template "member.nginx.conf" do
     user root
     group root
     mode 00755
+    variables(:subdomain => "#{node['anjukeinc']['subdomain']}")
 end
 
 template "mendian.nginx.conf" do
@@ -59,5 +63,6 @@ template "mendian.nginx.conf" do
     user root
     group root
     mode 00755
+    variables(:subdomain => "#{node['anjukeinc']['subdomain']}")
 end
 

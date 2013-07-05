@@ -30,7 +30,13 @@ include_recipe "anjukeinc::rabbitmq"
 include_recipe "anjukeinc::php-extension"
 
 ### setup config
-include_recipe "anjukeinc::config"
+include_recipe "anjukeinc::serverconfig"
 
 ### set up system font
 include_recipe "anjukeinc::font"
+
+### setup indexes
+include_recipe "anjukeinc::indexes"
+
+### setup php config
+include_recipe "anjukeinc::phpconfig"
