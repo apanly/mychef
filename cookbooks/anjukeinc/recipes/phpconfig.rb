@@ -14,7 +14,7 @@ execute "clone php config repo" do
   user 'vagrant'
   cmds = [
           "cd /home/vagrant/www",
-          "git clone #{node['anjukeinc']['php_indexes_repo']} config"
+          "git clone #{node['anjukeinc']['php_config_repo']} config"
   ]
   command (cmds.join " ; ")
 end

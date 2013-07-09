@@ -31,6 +31,7 @@ done
 if [ ! -z $domain ]
 then
     update_domain $domain
+    vagrant up
 else
     get_help
 fi
