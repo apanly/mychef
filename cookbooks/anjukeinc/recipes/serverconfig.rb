@@ -17,6 +17,7 @@ template "php-fpm.conf" do
     owner "root"
     group "root"
     mode "0644"
+    variables(:phpuser => "vagrant", :phpgroup => "vagrant")
 end
 
 template "nginx.conf" do
