@@ -1,0 +1,111 @@
+server {
+    listen 80;
+    server_name .local.dev.anjuke.com .<%= @subdomain %>.dev.anjuke.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/vagrant/www/indexes/anjuke.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/anjuke.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /zufang {
+        rewrite . /zufang/index.php last;
+    }
+
+    location /zufang/index.php {
+        root /home/vagrant/www/indexes/anjuke-zufang.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/anjuke-zufang.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /jinpu {
+        rewrite . /jinpu/index.php last;
+    }
+
+    location /jinpu/index.php {
+        root /home/vagrant/www/indexes/anjuke-jinpu.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/anjuke-jinpu.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name include.local.dev.anjukestatic.com include.<%= @subdomain %>.dev.anjukestatic.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /anjuke {
+        rewrite . /anjuke/index.php last;
+    }
+
+    location /anjuke/index.php {
+        root /home/vagrant/www/indexes/anjuke.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/anjuke.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /zufang {
+        rewrite . /zufang/index.php last;
+    }
+
+    location /zufang/index.php {
+        root /home/vagrant/www/indexes/anjuke-zufang.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/anjuke-zufang.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /jinpu {
+        rewrite . /jinpu/index.php last;
+    }
+
+    location /jinpu/index.php {
+        root /home/vagrant/www/indexes/anjuke-jinpu.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/anjuke-jinpu.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name pages.local.dev.anjukestatic.com pages.<%= @subdomain %>.dev.anjukestatic.com;
+    expires max;
+
+    location / {
+        root /code/pages;
+    }
+
+    location /zufang {
+        alias /code/haozu_pages;
+    }
+
+    location /jinpu {
+        alias /code/jinpu_pages;
+    }
+}

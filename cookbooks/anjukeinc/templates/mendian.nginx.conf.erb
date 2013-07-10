@@ -1,0 +1,48 @@
+server {
+    listen 80;
+    server_name .mendian.local.dev.anjuke.com .mendian.<%= @subdomain %>.dev.anjuke.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    root /home/vagrant/www/indexes/mendian.php;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/mendian.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name include.mendian.local.dev.anjukestatic.com include.mendian.<%= @subdomain %>.dev.anjukestatic.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    root /home/vagrant/www/indexes/mendian.php;
+
+    location /agency {
+        rewrite . /agency/index.php last;
+    }
+
+    location /agency/index.php {
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/mendian.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name pages.mendian.local.dev.anjukestatic.com pages.mendian.<%= @subdomain %>.dev.anjukestatic.com;
+    root /code/pages;
+    expires max;
+}

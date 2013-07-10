@@ -1,0 +1,314 @@
+server {
+    listen 80;
+    server_name .local.dev.jinpu.com .<%= @subdomain %>.dev.jinpu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/vagrant/www/indexes/jinpu.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name my.local.dev.jinpu.com my.<%= @subdomain %>.dev.jinpu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/vagrant/www/indexes/jinpu-my.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-my.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name jpiapi.local.dev.jinpu.com jpiapi.<%= @subdomain %>.dev.jinpu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/vagrant/www/indexes/jinpu-iapi.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-iapi.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name chart.local.dev.jinpu.com chart.<%= @subdomain %>.dev.jinpu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/vagrant/www/indexes/jinpu-chart.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-chart.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name crm.local.dev.jinpu.com crm.<%= @subdomain %>.dev.jinpu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/vagrant/www/indexes/jinpu-crm.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-crm.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name api.local.dev.jinpu.com api.<%= @subdomain %>.dev.jinpu.com iapi.local.dev.jinpu.com iapi.yyang.dev.jinpu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/vagrant/www/indexes/jinpu-iapi.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-iapi.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name 4fun.local.dev.jinpu.com 4fun.<%= @subdomain %>.dev.jinpu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/vagrant/www/indexes/jinpu-4fun.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-4fun.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name ifx.local.dev.jinpu.com ifx.<%= @subdomain %>.dev.jinpu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/vagrant/www/indexes/jinpu-ifx.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-ifx.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+server {
+    listen 80;
+    server_name mendian.local.dev.jinpu.com mendian.<%= @subdomain %>.dev.jinpu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/vagrant/www/indexes/jinpu-mendian.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-mendian.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name vip.local.dev.jinpu.com vip.<%= @subdomain %>.dev.jinpu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/vagrant/www/indexes/jinpu-zyx.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-zyx.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name includes.local.dev.jinpu.com includes.<%= @subdomain %>.dev.jinpu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /web {
+        rewrite . /web/index.php last;
+    }
+
+    location /web/index.php {
+	root /home/vagrant/www/indexes/jinpu.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /4fun {
+        rewrite . /4fun/index.php last;
+    }
+
+    location /4fun/index.php {
+	root /home/vagrant/www/indexes/jinpu-4fun.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-4fun.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /my {
+        rewrite . /my/index.php last;
+    }
+
+    location /my/index.php {
+	root /home/vagrant/www/indexes/jinpu-my.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-my.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /crm {
+        rewrite . /crm/index.php last;
+    }
+
+    location /crm/index.php {
+        root /home/vagrant/www/indexes/jinpu-crm.php;
+	internal;
+	fastcgi_pass 127.0.0.1:9000;
+	fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-crm.php;
+	include fastcgi_params;
+	expires epoch;
+    }
+
+    location /mendian {
+        rewrite . /mendian/index.php last;
+    }
+
+    location /mendian/index.php {
+        root /home/vagrant/www/indexes/jinpu-mendian.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-mendian.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /vip {
+        rewrite . /vip/index.php last;
+    }
+
+    location /vip/index.php {
+        root /home/vagrant/www/indexes/jinpu-zyx.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-zyx.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /myanjuke {
+        rewrite . /myanjuke/index.php last;
+    }
+
+    location /myanjuke/index.php {
+        root /home/vagrant/www/indexes/anjuke-jinpu.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/anjuke-jinpu.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name pages.local.dev.jinpu.com pages.<%= @subdomain %>.dev.jinpu.com;
+    root /code/jinpu_pages;
+    expires max;
+}

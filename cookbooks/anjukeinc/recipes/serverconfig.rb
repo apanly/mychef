@@ -24,6 +24,7 @@ template "nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
+    variables(:nginxuser => "vagrant")
 end
 
 template "anjuke.nginx.conf" do

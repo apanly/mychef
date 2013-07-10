@@ -1,0 +1,246 @@
+server {
+    listen 80;
+    server_name .local.dev.haozu.com .<%= @subdomain %>.dev.haozu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/vagrant/www/indexes/haozu.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name agent.local.dev.haozu.com agent.<%= @subdomain %>.dev.haozu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    root /home/vagrant/www/indexes/haozu-agent.php;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu-agent.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name mendian.local.dev.haozu.com mendian.<%= @subdomain %>.dev.haozu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    root /home/vagrant/www/indexes/haozu-mendian.php;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu-mendian.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name guanjia.local.dev.haozu.com guanjia.<%= @subdomain %>.dev.haozu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    root /home/vagrant/www/indexes/haozu-guanjia.php;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu-guanjia.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name api.local.dev.haozu.com api.<%= @subdomain %>.dev.haozu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    root /home/vagrant/www/indexes/haozu-api.php;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu-api.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name admin.local.dev.haozu.com admin.<%= @subdomain %>.dev.haozu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    root /home/vagrant/www/indexes/haozu-admin.php;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu-admin.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name crm.local.dev.haozu.com crm.<%= @subdomain %>.dev.haozu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    root /home/vagrant/www/indexes/haozu-crm.php;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu-crm.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name include.local.dev.haozu.com include.<%= @subdomain %>.dev.haozu.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /haozu {
+        rewrite . /haozu/index.php last;
+    }
+
+    location /haozu/index.php {
+	root /home/vagrant/www/indexes/haozu.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /agent {
+        rewrite . /agent/index.php last;
+    }
+
+    location /agent/index.php {
+	root /home/vagrant/www/indexes/haozu-agent.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu-agent.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /store {
+        rewrite . /store/index.php last;
+    }
+
+    location /store/index.php {
+	root /home/vagrant/www/indexes/haozu-mendian.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu-mendian.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /guanjia {
+        rewrite . /guanjia/index.php last;
+    }
+
+    location /guanjia/index.php {
+        root /home/vagrant/www/indexes/haozu-guanjia.php;
+	internal;
+	fastcgi_pass 127.0.0.1:9000;
+	fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu-guanjia.php;
+	include fastcgi_params;
+	expires epoch;
+    }
+
+    location /admin {
+        rewrite . /admin/index.php last;
+    }
+
+    location /admin/index.php {
+        root /home/vagrant/www/indexes/haozu-admin.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu-admin.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /crm {
+        rewrite . /crm/index.php last;
+    }
+
+    location /crm/index.php {
+        root /home/vagrant/www/indexes/haozu-crm.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/haozu-crm.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+}
+
+server {
+    listen 80;
+    server_name pages.local.dev.haozu.com pages.<%= @subdomain %>.dev.haozu.com;
+    root /code/haozu_pages;
+    expires max;
+}
