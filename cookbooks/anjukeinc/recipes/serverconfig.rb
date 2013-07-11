@@ -17,7 +17,7 @@ template "php-fpm.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:phpuser => "vagrant", :phpgroup => "vagrant")
+    variables(:phpuser => "#{node['anjukeinc']['username']}", :phpgroup => "#{node['anjukeinc']['username']}")
 end
 
 template "nginx.conf" do
@@ -25,7 +25,7 @@ template "nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:nginxuser => "vagrant")
+    variables(:nginxuser => "#{node['anjukeinc']['username']}")
 end
 
 template "anjuke.nginx.conf" do

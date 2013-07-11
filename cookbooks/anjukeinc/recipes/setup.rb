@@ -1,15 +1,7 @@
 ## setup anjukeinc
 
-### create build root
-directory node['anjukeinc']['build_root'] do
-  owner 'root'
-  group 'root'
-  mode 00755
-  action :create
-end
-
 ### setup users
-include_recipe "anjukeinc::users"
+### include_recipe "anjukeinc::users"
 
 ### download tarball files
 include_recipe "anjukeinc::tarball"

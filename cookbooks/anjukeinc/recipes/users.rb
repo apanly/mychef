@@ -1,11 +1,11 @@
-### ensure `developer` user
-group "create group developer" do
+### ensure user
+group "create group" do
   group_name node['anjukeinc']['group_name']
   gid node['anjukeinc']['gid']
   system true
 end
 
-user "create user developer" do
+user "create user" do
   username node['anjukeinc']['username']
   uid node['anjukeinc']['uid']
   gid node['anjukeinc']['gid']
@@ -16,8 +16,8 @@ user "create user developer" do
 end
 
 directory node['anjukeinc']['home'] + '/.ssh/' do
-  owner 'developer'
-  group 'developer'
+  owner node['anjukeinc']['username']
+  group node['anjukeinc']['group_name']
   mode 00700
   action :create
 end

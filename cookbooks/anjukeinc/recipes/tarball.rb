@@ -1,3 +1,11 @@
+### create build root
+directory node['anjukeinc']['build_root'] do
+  owner 'root'
+  group 'root'
+  mode 00755
+  action :create
+end
+
 # tarballs
 remote_file node['anjukeinc']['build_root'] + "/" + node['anjukeinc']['mysql_tarball'] do
   source node['anjukeinc']['mysql_tarball_url']
