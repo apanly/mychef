@@ -21,7 +21,7 @@ default['anjukeinc']['php_install_path'] = '/usr/local/php'
 
 # rabbitmq-c
 default['anjukeinc']['rabbitmq-repo'] = 'git://github.com/alanxz/rabbitmq-c.git'
-# zeromq
+j# zeromq
 default['anjukeinc']['zeromq_tarball'] = 'zeromq-2.2.0.tar.gz'
 default['anjukeinc']['zeromq_tarball_url'] = 'http://download.zeromq.org/zeromq-2.2.0.tar.gz'
 default['anjukeinc']['zeromq_install_path'] = '/usr/local/zeromq-2.2.0'
