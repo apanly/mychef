@@ -51,4 +51,3 @@ default['anjukeinc']['php_indexes_repo'] = 'git@git.corp.anjuke.com:yyang/v2-ind
 default['anjukeinc']['php_config_repo'] = 'git@git.corp.anjuke.com:anjuke/v2-config'
 
 # python extension
-default['anjukeinc']['subdomain'] = 'yyang'
