@@ -10,10 +10,10 @@ server {
     }
 
     location /index.php {
-        root /home/vagrant/www/indexes/jinpu.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -31,10 +31,10 @@ server {
     }
 
     location /index.php {
-        root /home/vagrant/www/indexes/jinpu-my.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu-my.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-my.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-my.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -52,10 +52,10 @@ server {
     }
 
     location /index.php {
-        root /home/vagrant/www/indexes/jinpu-iapi.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu-iapi.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-iapi.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-iapi.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -73,10 +73,10 @@ server {
     }
 
     location /index.php {
-        root /home/vagrant/www/indexes/jinpu-chart.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu-chart.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-chart.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-chart.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -94,10 +94,10 @@ server {
     }
 
     location /index.php {
-        root /home/vagrant/www/indexes/jinpu-crm.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu-crm.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-crm.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-crm.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -115,10 +115,10 @@ server {
     }
 
     location /index.php {
-        root /home/vagrant/www/indexes/jinpu-iapi.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu-iapi.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-iapi.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-iapi.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -136,10 +136,10 @@ server {
     }
 
     location /index.php {
-        root /home/vagrant/www/indexes/jinpu-4fun.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu-4fun.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-4fun.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-4fun.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -157,10 +157,10 @@ server {
     }
 
     location /index.php {
-        root /home/vagrant/www/indexes/jinpu-ifx.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu-ifx.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-ifx.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-ifx.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -177,10 +177,10 @@ server {
     }
 
     location /index.php {
-        root /home/vagrant/www/indexes/jinpu-mendian.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu-mendian.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-mendian.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-mendian.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -198,10 +198,10 @@ server {
     }
 
     location /index.php {
-        root /home/vagrant/www/indexes/jinpu-zyx.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu-zyx.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-zyx.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-zyx.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -219,10 +219,10 @@ server {
     }
 
     location /web/index.php {
-	root /home/vagrant/www/indexes/jinpu.php;
+	root /home/<%= @docuser %>/www/indexes/jinpu.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -232,10 +232,10 @@ server {
     }
 
     location /4fun/index.php {
-	root /home/vagrant/www/indexes/jinpu-4fun.php;
+	root /home/<%= @docuser %>/www/indexes/jinpu-4fun.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-4fun.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-4fun.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -245,10 +245,10 @@ server {
     }
 
     location /my/index.php {
-	root /home/vagrant/www/indexes/jinpu-my.php;
+	root /home/<%= @docuser %>/www/indexes/jinpu-my.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-my.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-my.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -258,10 +258,10 @@ server {
     }
 
     location /crm/index.php {
-        root /home/vagrant/www/indexes/jinpu-crm.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu-crm.php;
 	internal;
 	fastcgi_pass 127.0.0.1:9000;
-	fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-crm.php;
+	fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-crm.php;
 	include fastcgi_params;
 	expires epoch;
     }
@@ -271,10 +271,10 @@ server {
     }
 
     location /mendian/index.php {
-        root /home/vagrant/www/indexes/jinpu-mendian.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu-mendian.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-mendian.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-mendian.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -284,10 +284,10 @@ server {
     }
 
     location /vip/index.php {
-        root /home/vagrant/www/indexes/jinpu-zyx.php;
+        root /home/<%= @docuser %>/www/indexes/jinpu-zyx.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/jinpu-zyx.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-zyx.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -297,10 +297,10 @@ server {
     }
 
     location /myanjuke/index.php {
-        root /home/vagrant/www/indexes/anjuke-jinpu.php;
+        root /home/<%= @docuser %>/www/indexes/anjuke-jinpu.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/vagrant/www/indexes/anjuke-jinpu.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-jinpu.php;
         include fastcgi_params;
         expires epoch;
     }

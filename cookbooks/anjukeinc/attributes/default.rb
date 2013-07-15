@@ -10,7 +10,7 @@ default['anjukeinc']['build_root'] = '/root/install'
 
 # mysql
 default['anjukeinc']['mysql_tarball'] = 'mysql-5.5.28.tar.gz'
-default['anjukeinc']['mysql_tarball_url'] = 'http://downloads.sourceforge.net/project/mysql.mirror/MySQL%205.5.28/mysql-5.5.28.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fmysql.mirror%2Ffiles%2FMySQL%25205.5.28%2F&ts=1373457022&use_mirror=nchc'
+default['anjukeinc']['mysql_tarball_url'] = 'http://static.yyang.dev.anjuke.com/mysql-5.5.28.tar.gz'
 default['anjukeinc']['mysql_install_path'] = '/usr/local/mysql'
 
 # php

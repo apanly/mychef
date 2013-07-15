@@ -33,7 +33,7 @@ template "anjuke.nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:subdomain => "#{node['anjukeinc']['subdomain']}")
+    variables(:subdomain => "#{node['anjukeinc']['subdomain']}", :docuser => "#{node['anjukeinc']['username']}")
 end
 
 template "haozu.nginx.conf" do
@@ -41,7 +41,7 @@ template "haozu.nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:subdomain => "#{node['anjukeinc']['subdomain']}")
+    variables(:subdomain => "#{node['anjukeinc']['subdomain']}", :docuser => "#{node['anjukeinc']['username']}")
 end
 
 template "jinpu.nginx.conf" do
@@ -49,7 +49,7 @@ template "jinpu.nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:subdomain => "#{node['anjukeinc']['subdomain']}")
+    variables(:subdomain => "#{node['anjukeinc']['subdomain']}", :docuser => "#{node['anjukeinc']['username']}")
 end
 
 template "member.nginx.conf" do
@@ -57,7 +57,7 @@ template "member.nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:subdomain => "#{node['anjukeinc']['subdomain']}")
+    variables(:subdomain => "#{node['anjukeinc']['subdomain']}", :docuser => "#{node['anjukeinc']['username']}")
 end
 
 template "mendian.nginx.conf" do
@@ -65,6 +65,6 @@ template "mendian.nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:subdomain => "#{node['anjukeinc']['subdomain']}")
+    variables(:subdomain => "#{node['anjukeinc']['subdomain']}", :docuser => "#{node['anjukeinc']['username']}")
 end
 

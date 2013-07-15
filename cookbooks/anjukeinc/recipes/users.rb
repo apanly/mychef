@@ -21,3 +21,4 @@ directory node['anjukeinc']['home'] + '/.ssh/' do
   mode 00700
   action :create
 end
+
