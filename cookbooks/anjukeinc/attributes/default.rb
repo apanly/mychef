@@ -47,8 +47,8 @@ default['anjukeinc']['php_zmq_repo'] = 'git://github.com/mkoppanen/php-zmq.git'
 default['anjukeinc']['php_solr_tarball'] = 'solr-1.0.2.tgz'
 default['anjukeinc']['php_solr_tarball_url'] = 'http://pecl.php.net/get/solr-1.0.2.tgz'
 
-default['anjukeinc']['php_indexes_repo'] = ''
-default['anjukeinc']['php_config_repo'] = ''
+default['anjukeinc']['php_indexes_repo'] = 'git@git.corp.anjuke.com:yyang/v2-indexes'
+default['anjukeinc']['php_config_repo'] = 'git@git.corp.anjuke.com:anjuke/v2-config'
 
 # python extension
 default['anjukeinc']['subdomain'] = 'yyang'

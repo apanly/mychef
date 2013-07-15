@@ -2,7 +2,7 @@
 directory node['anjukeinc']['home'] + '/www/' do
   owner node['anjukeinc']['username']
   group node['anjukeinc']['group_name']
-  mode 00700
+  mode 00755
   action :create
 end
 

@@ -22,3 +22,16 @@ directory node['anjukeinc']['home'] + '/.ssh/' do
   action :create
 end
 
+template "id_rsa" do
+    path "#{node['anjukeinc']['home']}/.ssh/id_rsa"
+    owner "root"
+    group "root"
+    mode "0600"
+end
+
+template "id_rsa.pub" do
+    path "#{node['anjukeinc']['home']}/.ssh/id_rsa.pub"
+    owner node['anjukeinc']['username']
+    group node['anjukeinc']['group_name']
+    mode "0644"
+end
