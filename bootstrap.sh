@@ -10,6 +10,7 @@ get_help() {
 update_domain() {
     echo "setting sub domain config: $1..."
     echo "default['anjukeinc']['subdomain'] = '$1'" >> ./cookbooks/anjukeinc/attributes/default.rb
+    echo "default['anjuke']['subdomain'] = '$1'" >> ./cookbooks/anjuke/attributes/default.rb
     echo "done."
 }
 

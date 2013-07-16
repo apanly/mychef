@@ -47,9 +47,6 @@ default['anjukeinc']['php_zmq_repo'] = 'git://github.com/mkoppanen/php-zmq.git'
 default['anjukeinc']['php_solr_tarball'] = 'solr-1.0.2.tgz'
 default['anjukeinc']['php_solr_tarball_url'] = 'http://pecl.php.net/get/solr-1.0.2.tgz'
 
-default['anjukeinc']['php_indexes_repo'] = 'git@git.corp.anjuke.com:yyang/v2-indexes'
-default['anjukeinc']['php_config_repo'] = 'git@git.corp.anjuke.com:anjuke/v2-config'
-
 default['anjukeinc']['font_dir'] = '/usr/share/fonts'
 default['anjukeinc']['font_arail_big'] = 'http://static.yyang.dev.anjuke.com/ARIAL.TTF'
 default['anjukeinc']['font_share_arial_big'] = '/usr/share/fonts/ARIAL.TTF'
@@ -63,3 +60,4 @@ default['anjukeinc']['font_arail_small'] = 'http://static.yyang.dev.anjuke.com/a
 default['anjukeinc']['font_share_arial_small'] = '/usr/share/fonts/arial.ttf'
 
 # python extension
+default['anjukeinc']['subdomain'] = 'yyang'

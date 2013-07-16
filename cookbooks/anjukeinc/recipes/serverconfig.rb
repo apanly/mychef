@@ -4,7 +4,7 @@ template "nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:nginxuser => "#{node['anjukeinc']['username']}")
+    variables(:nginxuser => "#{node['anjukeinc']['username']}", :docuser => "#{node['anjukeinc']['username']}")
 end
 
 template "anjuke.nginx.conf" do

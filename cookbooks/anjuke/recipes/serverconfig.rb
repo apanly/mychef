@@ -19,3 +19,11 @@ template "php-fpm.conf" do
     mode "0644"
     variables(:phpuser => "#{node['anjuke']['username']}", :phpgroup => "#{node['anjuke']['group_name']}")
 end
+
+execute "run php-fpm" do
+    user 'root'
+    cmds = [
+        "/usr/local/php_ajk/sbin/php-fpm"
+    ]
+    command (cmds.join " ; ")
+end

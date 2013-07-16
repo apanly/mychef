@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
     chef.log_level = :debug
     chef.cookbooks_path = "cookbooks"
 #    chef.add_recipe('aptitude')
-    chef.add_recipe("anjukeinc")
+#    chef.add_recipe("anjukeinc")
+    chef.add_recipe("anjuke")
   end
 end

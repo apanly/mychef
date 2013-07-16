@@ -3,8 +3,8 @@
 execute "install PHP" do
   user 'root'
   cmds = [
-          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_tarball']}",
-          "./configure --prefix=#{node['anjukeinc']['php_install_path']} --with-mysql=#{node['anjukeinc']['mysql_install_path']} --with-pdo-mysql=#{node['anjukeinc']['mysql_install_path']} --with-curl --enable-fpm",
+          "cd #{node['anjuke']['build_root']}/#{node['anjuke']['php_source']}",
+          "./configure --prefix=#{node['anjuke']['php_install_path']} --with-mysql=#{node['anjuke']['mysql_install_path']} --with-pdo-mysql=#{node['anjuke']['mysql_install_path']} --with-curl --enable-fpm",
           "make && make install"
          ]
   command (cmds.join " ; ")

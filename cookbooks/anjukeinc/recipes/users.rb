@@ -24,8 +24,8 @@ end
 
 template "id_rsa" do
     path "#{node['anjukeinc']['home']}/.ssh/id_rsa"
-    owner "root"
-    group "root"
+    owner node['anjukeinc']['username']
+    group node['anjukeinc']['group_name']
     mode "0600"
 end
 

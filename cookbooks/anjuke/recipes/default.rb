@@ -1,5 +1,5 @@
 ### setup php
-include_recipe "anjuke::php"
+#include_recipe "anjuke::php"
 
 ### setup php extensions
 include_recipe "anjuke::php-extension"
@@ -8,7 +8,4 @@ include_recipe "anjuke::php-extension"
 include_recipe "anjuke::serverconfig"
 
 ### download php config
-#include_recipe "anjukeinc::phpconfig"
-
-### download index config
-#include_recipe "anjukeinc::phpindex"
+include_recipe "anjuke::phpconfig"
