@@ -50,4 +50,16 @@ default['anjukeinc']['php_solr_tarball_url'] = 'http://pecl.php.net/get/solr-1.0
 default['anjukeinc']['php_indexes_repo'] = 'git@git.corp.anjuke.com:yyang/v2-indexes'
 default['anjukeinc']['php_config_repo'] = 'git@git.corp.anjuke.com:anjuke/v2-config'
 
+default['anjukeinc']['font_dir'] = '/usr/share/fonts'
+default['anjukeinc']['font_arail_big'] = 'http://static.yyang.dev.anjuke.com/ARIAL.TTF'
+default['anjukeinc']['font_share_arial_big'] = '/usr/share/fonts/ARIAL.TTF'
+default['anjukeinc']['font_msyh'] = 'http://static.yyang.dev.anjuke.com/MSYH.TTF'
+default['anjukeinc']['font_share_msyh'] = '/usr/share/fonts/MSYH.TTF'
+default['anjukeinc']['font_simyou'] = 'http://static.yyang.dev.anjuke.com/SIMYOU.TTF'
+default['anjukeinc']['font_share_simyou'] = '/usr/share/fonts/SIMYOU.TTF'
+default['anjukeinc']['font_stxihei'] = 'http://static.yyang.dev.anjuke.com/STXIHEI.TTF'
+default['anjukeinc']['font_share_stxihei'] = '/usr/share/fonts/STXIHEI.TTF'
+default['anjukeinc']['font_arail_small'] = 'http://static.yyang.dev.anjuke.com/arial.ttf'
+default['anjukeinc']['font_share_arial_small'] = '/usr/share/fonts/arial.ttf'
+
 # python extension

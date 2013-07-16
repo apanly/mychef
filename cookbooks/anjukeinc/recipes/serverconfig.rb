@@ -1,24 +1,3 @@
-template "php.ini" do
-    path "#{node['anjukeinc']['php_install_path']}/lib/php.ini"
-    owner "root"
-    group "root"
-    mode "0644"
-end
-
-template "php-extension.conf" do
-    path "#{node['anjukeinc']['php_install_path']}/lib/php-ext.ini"
-    owner "root"
-    group "root"
-    mode "0644"
-end
-
-template "php-fpm.conf" do
-    path "#{node['anjukeinc']['php_install_path']}/etc/php-fpm.conf"
-    owner "root"
-    group "root"
-    mode "0644"
-    variables(:phpuser => "#{node['anjukeinc']['username']}", :phpgroup => "#{node['anjukeinc']['username']}")
-end
 
 template "nginx.conf" do
     path "/etc/nginx/nginx.conf"
@@ -68,3 +47,10 @@ template "mendian.nginx.conf" do
     variables(:subdomain => "#{node['anjukeinc']['subdomain']}", :docuser => "#{node['anjukeinc']['username']}")
 end
 
+execute "reload nginx" do
+  user 'root'
+  cmds = [
+          "/etc/init.d/nginx reload"
+         ]
+  command (cmds.join " ; ")
+end
