@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.network :private_network, ip: "192.168.222.2"
   config.vm.network :forwarded_port, guest: 80, host: 80
+  config.vm.synced_folder "{$PATH}", "/code", extra: 'dmode=777,fmode=777'
 
   config.vm.provision :chef_solo do |chef|
     chef.log_level = :debug

@@ -14,16 +14,22 @@ update_domain() {
     echo "done."
 }
 
+update_path(){
+
+}
+
 if [ $# -eq 0 ]
 then
     get_help
 fi
 
-while getopts d: val
+while getopts d:p: val
 do
     case $val in
         d)
 	    domain=$OPTARG;;
+        p)
+        path = $OPTARG;;
         ?)
 	    get_help;;
     esac
@@ -32,6 +38,7 @@ done
 if [ ! -z $domain ]
 then
     update_domain $domain
+    #update_path $path
     vagrant up
 else
     get_help
