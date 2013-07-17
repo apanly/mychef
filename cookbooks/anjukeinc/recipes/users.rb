@@ -38,7 +38,7 @@ end
 
 template "known_hosts" do
     path "#{node['anjukeinc']['home']}/.ssh/known_hosts"
-    owner node['anjukeinc']['username']
+    owner node['anjukeinc']['username']exit
     group node['anjukeinc']['group_name']
     mode "0644"
 end

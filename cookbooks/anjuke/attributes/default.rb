@@ -19,4 +19,9 @@ default['anjuke']['php_solr_source'] = 'solr-1.0.2'
 default['anjuke']['php_indexes_repo'] = 'git@git.corp.anjuke.com:yyang/v2-indexes'
 default['anjuke']['php_config_repo'] = 'git@git.corp.anjuke.com:anjuke/v2-config'
 
+default['anjuke']['code_repo'] = 'git@git.corp.anjuke.com:anjuke/v2-feature'
+default['anjuke']['page_repo'] = 'http://projects.dev.anjuke.com/svn/sites/pages'
+default['anjuke']['svn_user'] = 'devdeployer'
+default['anjuke']['svn_pass'] = 'devdeployer'
+
 default['anjuke']['subdomain'] = 'yyang'

@@ -127,11 +127,11 @@ server {
         root /code/pages;
     }
 
-    location /zufang {
+    alias /zufang {
         alias /code/haozu_pages;
     }
 
-    location /jinpu {
+    alias /jinpu {
         alias /code/jinpu_pages;
     }
 }

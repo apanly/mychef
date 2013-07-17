@@ -21,7 +21,7 @@ execute 'update timezone' do
   user 'root'
 end
 
-%w[git autoconf libcurl4-gnutls-dev libxml2-dev g++ make cmake libpcre++-dev nginx libjpeg8-dev libpng12-dev libfreetype6-dev uuid-dev libtool libncurses5-dev re2c].each do |p|
+%w[git autoconf libcurl4-gnutls-dev libxml2-dev g++ make cmake libpcre++-dev nginx libjpeg8-dev libpng12-dev libfreetype6-dev uuid-dev libtool libncurses5-dev re2c subversion].each do |p|
   package p do
     action :install
   end

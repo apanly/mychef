@@ -4,7 +4,7 @@ template "nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:nginxuser => "#{node['anjukeinc']['username']}", :docuser => "#{node['anjukeinc']['username']}")
+    variables(:nginxuser => node['anjukeinc']['username'], :docuser => node['anjukeinc']['username'], :subdomain => node['anjukeinc']['subdomain'])
 end
 
 template "anjuke.nginx.conf" do
@@ -12,7 +12,7 @@ template "anjuke.nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:subdomain => "#{node['anjukeinc']['subdomain']}", :docuser => "#{node['anjukeinc']['username']}")
+    variables(:subdomain => node['anjukeinc']['subdomain'], :docuser => node['anjukeinc']['username'])
 end
 
 template "haozu.nginx.conf" do
@@ -20,7 +20,7 @@ template "haozu.nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:subdomain => "#{node['anjukeinc']['subdomain']}", :docuser => "#{node['anjukeinc']['username']}")
+    variables(:subdomain => node['anjukeinc']['subdomain'], :docuser => node['anjukeinc']['username'])
 end
 
 template "jinpu.nginx.conf" do
@@ -28,7 +28,7 @@ template "jinpu.nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:subdomain => "#{node['anjukeinc']['subdomain']}", :docuser => "#{node['anjukeinc']['username']}")
+    variables(:subdomain => node['anjukeinc']['subdomain'], :docuser => node['anjukeinc']['username'])
 end
 
 template "member.nginx.conf" do
@@ -36,7 +36,7 @@ template "member.nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:subdomain => "#{node['anjukeinc']['subdomain']}", :docuser => "#{node['anjukeinc']['username']}")
+    variables(:subdomain => node['anjukeinc']['subdomain'], :docuser => node['anjukeinc']['username'])
 end
 
 template "mendian.nginx.conf" do
@@ -44,7 +44,7 @@ template "mendian.nginx.conf" do
     owner "root"
     group "root"
     mode "0644"
-    variables(:subdomain => "#{node['anjukeinc']['subdomain']}", :docuser => "#{node['anjukeinc']['username']}")
+    variables(:subdomain => node['anjukeinc']['subdomain'], :docuser => node['anjukeinc']['username'])
 end
 
 execute "reload nginx" do
