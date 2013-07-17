@@ -1,5 +1,5 @@
 ### setup php
-#include_recipe "anjuke::php"
+include_recipe "anjuke::php"
 
 ### setup php extensions
 include_recipe "anjuke::php-extension"
