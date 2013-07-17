@@ -11,4 +11,4 @@ include_recipe "anjuke::serverconfig"
 include_recipe "anjuke::phpconfig"
 
 ### checkout code
-include_recipe "anjuke:code"
+include_recipe "anjuke::code"
