@@ -1,5 +1,5 @@
 # clone the code repo of php
-execute "clone php config repo" do
+execute "clone php code repo" do
   user node['anjuke']['username']
   cmds = [
           "cd /code",
@@ -9,7 +9,7 @@ execute "clone php config repo" do
 end
 
 # checkout pages files
-execute "clone php config repo" do
+execute "clone pages repo" do
   user node['anjuke']['username']
   cmds = [
   	      "export LC_CTYPE=\"zh_CN.UTF-8\"",

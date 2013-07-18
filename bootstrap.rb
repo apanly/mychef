@@ -40,4 +40,4 @@ if options[:path]
 	create_vagrant_file(options[:path])
 end
 
-#exec 'vagrant up'
+exec 'vagrant up'
