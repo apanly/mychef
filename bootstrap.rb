@@ -17,14 +17,26 @@ option_parser = OptionParser.new do |opts|
 end.parse!
 
 def init_userdomain(domain)
+  files = ['./cookbooks/anjukeinc/attributes/default.rb', './cookbooks/anjuke/attributes/default.rb']
   cfg_domain = "default['anjukeinc']['subdomain'] = '#{domain}'"
-  p cfg_domain
+  files.each do |file|
+  	f = open(file, "a") 
+	f.puts cfg_domain
+  end
 end
 
-def init_codepath(path)
+def create_vagrant_file(path)
+  text = File.read('./Vagrantfile')
+  replace = text.gsub(/\{\$PATH\}/, "#{path}")
+  File.open('./Vagrantfile', "w") { |file| file.puts replace }
 end
 
-def create_vagrant_file()
+if options[:domain]
+  init_userdomain(options[:domain])
 end
 
-init_userdomain(options[:domain])
+if options[:path]
+	create_vagrant_file(options[:path])
+end
+
+exec 'vagrant up'

@@ -23,3 +23,4 @@ default['anjuke']['code_repo'] = 'git@git.corp.anjuke.com:anjuke/v2-feature'
 default['anjuke']['page_repo'] = 'http://projects.dev.anjuke.com/svn/sites/pages'
 default['anjuke']['svn_user'] = 'devdeployer'
 default['anjuke']['svn_pass'] = 'devdeployer'
+
