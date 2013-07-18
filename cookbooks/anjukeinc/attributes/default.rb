@@ -59,4 +59,7 @@ default['anjukeinc']['font_share_stxihei'] = '/usr/share/fonts/STXIHEI.TTF'
 default['anjukeinc']['font_arail_small'] = 'http://static.yyang.dev.anjuke.com/arial.ttf'
 default['anjukeinc']['font_share_arial_small'] = '/usr/share/fonts/arial.ttf'
 
+default['anjukeinc']['php_indexes_repo'] = 'git@git.corp.anjuke.com:yyang/v2-indexes'
+default['anjukeinc']['php_config_repo'] = 'git@git.corp.anjuke.com:anjuke/v2-config'
+
 default['anjukeinc']['subdomain'] = '{$USER}'
