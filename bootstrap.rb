@@ -20,8 +20,9 @@ def init_userdomain(domain)
   files = ['./cookbooks/anjukeinc/attributes/default.rb', './cookbooks/anjuke/attributes/default.rb']
   cfg_domain = "default['anjukeinc']['subdomain'] = '#{domain}'"
   files.each do |file|
-  	f = open(file, "a") 
-	f.puts cfg_domain
+  	text = File.read(file)
+    replace = text.gsub(/\{\$USER\}/, "#{domain}")
+    File.open(file, "w") { |f| f.puts replace }
   end
 end
 
@@ -39,4 +40,4 @@ if options[:path]
 	create_vagrant_file(options[:path])
 end
 
-exec 'vagrant up'
+#exec 'vagrant up'

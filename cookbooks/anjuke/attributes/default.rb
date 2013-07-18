@@ -24,3 +24,4 @@ default['anjuke']['page_repo'] = 'http://projects.dev.anjuke.com/svn/sites/pages
 default['anjuke']['svn_user'] = 'devdeployer'
 default['anjuke']['svn_pass'] = 'devdeployer'
 
+default['anjuke']['subdomain'] = '{$USER}'

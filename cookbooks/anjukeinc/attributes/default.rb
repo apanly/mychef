@@ -59,3 +59,4 @@ default['anjukeinc']['font_share_stxihei'] = '/usr/share/fonts/STXIHEI.TTF'
 default['anjukeinc']['font_arail_small'] = 'http://static.yyang.dev.anjuke.com/arial.ttf'
 default['anjukeinc']['font_share_arial_small'] = '/usr/share/fonts/arial.ttf'
 
+default['anjukeinc']['subdomain'] = '{$USER}'
