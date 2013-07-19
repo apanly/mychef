@@ -5,13 +5,6 @@ template "php.ini" do
     mode "0644"
 end
 
-template "php-extension.conf" do
-    path "#{node['anjuke']['php_install_path']}/lib/php-ext.ini"
-    owner "root"
-    group "root"
-    mode "0644"
-end
-
 template "php-fpm.conf" do
     path "#{node['anjuke']['php_install_path']}/etc/php-fpm.conf"
     owner "root"

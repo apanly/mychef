@@ -5,13 +5,6 @@ template "php.ini" do
     mode "0644"
 end
 
-template "php-extension.conf" do
-    path "#{node['haozu']['php_install_path']}/lib/php-ext.ini"
-    owner "root"
-    group "root"
-    mode "0644"
-end
-
 template "php-fpm.conf" do
     path "#{node['haozu']['php_install_path']}/etc/php-fpm.conf"
     owner "root"
@@ -23,7 +16,7 @@ end
 execute "run php-fpm" do
     user 'root'
     cmds = [
-        "/usr/local/php_ajk/sbin/php-fpm"
+        "#{node['haozu']['php_install_path']}/sbin/php-fpm"
     ]
     command (cmds.join " ; ")
 end

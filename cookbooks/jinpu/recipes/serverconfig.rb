@@ -1,29 +1,22 @@
 template "php.ini" do
-    path "#{node['anjuke']['php_install_path']}/lib/php.ini"
-    owner "root"
-    group "root"
-    mode "0644"
-end
-
-template "php-extension.conf" do
-    path "#{node['anjuke']['php_install_path']}/lib/php-ext.ini"
+    path "#{node['jinpu']['php_install_path']}/lib/php.ini"
     owner "root"
     group "root"
     mode "0644"
 end
 
 template "php-fpm.conf" do
-    path "#{node['anjuke']['php_install_path']}/etc/php-fpm.conf"
+    path "#{node['jinpu']['php_install_path']}/etc/php-fpm.conf"
     owner "root"
     group "root"
     mode "0644"
-    variables(:phpuser => "#{node['anjuke']['username']}", :phpgroup => "#{node['anjuke']['group_name']}")
+    variables(:phpuser => "#{node['jinpu']['username']}", :phpgroup => "#{node['jinpu']['group_name']}")
 end
 
 execute "run php-fpm" do
     user 'root'
     cmds = [
-        "/usr/local/php_ajk/sbin/php-fpm"
+        "#{node['jinpu']['php_install_path']}/sbin/php-fpm"
     ]
     command (cmds.join " ; ")
 end
