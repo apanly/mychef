@@ -31,7 +31,7 @@ execute "replace subdomain" do
   user node['anjukeinc']['username']
   cmds = [
           "cd /code/config",
-          "echo \"\\\$ddnsName = '#{node['anjukeinc']['subdomain']}';\" > local_config.php"
+          "echo \"\<\?php \\\$ddnsName = '#{node['anjukeinc']['subdomain']}';\" > local_config.php"
   ]
   command (cmds.join " ; ")
 end

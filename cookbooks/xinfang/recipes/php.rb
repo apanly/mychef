@@ -1,0 +1,11 @@
+# setup php
+
+execute "install PHP" do
+  user 'root'
+  cmds = [
+          "cd #{node['anjuke']['build_root']}/#{node['anjuke']['php_source']}",
+          "./configure --prefix=#{node['anjuke']['php_install_path']} --with-mysql=#{node['anjuke']['mysql_install_path']} --with-pdo-mysql=#{node['anjuke']['mysql_install_path']} --with-curl --enable-fpm",
+          "make && make install"
+         ]
+  command (cmds.join " ; ")
+end
