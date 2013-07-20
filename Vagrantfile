@@ -16,5 +16,9 @@ Vagrant.configure("2") do |config|
     chef.add_recipe("anjukeinc")
     chef.add_recipe("anjuke")
     chef.add_recipe("haozu")
+    chef.add_recipe("jinpu")
+    #chef.add_recipe("xinfang")
+    #chef.add_recipe("member")
+    #chef.add_recipe("soj")
   end
 end
