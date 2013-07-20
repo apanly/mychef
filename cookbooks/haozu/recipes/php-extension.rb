@@ -70,19 +70,6 @@ execute "install php extension msgpack" do
   command (cmds.join " ; ")
 end
 
-execute "install php extension solr" do
-  user 'root'
-  cmds = [
-          "cd #{node['haozu']['build_root']}",
-          "tar zxvf #{node['haozu']['php_solr_source']}",
-          "cd #{node['haozu']['build_root']}/#{node['haozu']['php_solr_source']}",
-          "#{node['haozu']['php_install_path']}/bin/phpize",
-          "./configure --with-php-config=#{node['haozu']['php_install_path']}/bin/php-config",
-          "make && make install"
-  ]
-  command (cmds.join " ; ")
-end
-
 execute "install php extension redis" do
   user 'root'
   cmds = [

@@ -70,19 +70,6 @@ execute "install php extension msgpack" do
   command (cmds.join " ; ")
 end
 
-execute "install php extension solr" do
-  user 'root'
-  cmds = [
-          "cd #{node['anjuke']['build_root']}",
-          "tar zxvf #{node['anjuke']['php_solr_source']}",
-          "cd #{node['anjuke']['build_root']}/#{node['anjuke']['php_solr_source']}",
-          "#{node['anjuke']['php_install_path']}/bin/phpize",
-          "./configure --with-php-config=#{node['anjuke']['php_install_path']}/bin/php-config",
-          "make && make install"
-  ]
-  command (cmds.join " ; ")
-end
-
 execute "install php extension php-zmq" do
   user 'root'
   cmds = [

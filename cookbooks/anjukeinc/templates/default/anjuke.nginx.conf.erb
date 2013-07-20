@@ -25,7 +25,7 @@ server {
     location /zufang/index.php {
         root /home/<%= @docuser %>/www/indexes/anjuke-zufang.php;
         internal;
-        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_pass 127.0.0.1:9001;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-zufang.php;
         include fastcgi_params;
         expires epoch;
@@ -38,7 +38,7 @@ server {
     location /jinpu/index.php {
         root /home/<%= @docuser %>/www/indexes/anjuke-jinpu.php;
         internal;
-        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_pass 127.0.0.1:9002;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-jinpu.php;
         include fastcgi_params;
         expires epoch;

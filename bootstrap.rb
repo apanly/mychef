@@ -17,7 +17,7 @@ option_parser = OptionParser.new do |opts|
 end.parse!
 
 def init_userdomain(domain)
-  files = ['./cookbooks/anjukeinc/attributes/default.rb', './cookbooks/anjuke/attributes/default.rb']
+  files = ['./cookbooks/anjukeinc/attributes/default.rb', './cookbooks/anjuke/attributes/default.rb', './cookbooks/haozu/attributes/default.rb', './cookbooks/jinpu/attributes/default.rb']
   cfg_domain = "default['anjukeinc']['subdomain'] = '#{domain}'"
   files.each do |file|
   	text = File.read(file)

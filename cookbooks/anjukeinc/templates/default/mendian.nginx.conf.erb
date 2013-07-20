@@ -12,7 +12,7 @@ server {
 
     location /index.php {
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9000;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/mendian.php;
         include fastcgi_params;
         expires epoch;
@@ -33,7 +33,7 @@ server {
 
     location /agency/index.php {
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9000;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/mendian.php;
         include fastcgi_params;
         expires epoch;
