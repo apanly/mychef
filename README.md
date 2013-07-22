@@ -8,7 +8,7 @@ $ cd mychef
 ```
 执行引导程序
 ```
-$ ./bootstrap.sh yyang
+$ ruby bootstrap.rb -d yyang -p /User/yangyong/Document/website
 ```
 
 ## 第二次启动
