@@ -12,7 +12,6 @@ end
 execute "clone pages repo" do
   user node['anjuke']['username']
   cmds = [
-  	      "LC_ALL=\"zh_CN.UTF-8\"",
           "cd /code",
           "svn checkout #{node['anjuke']['page_repo']} --username=#{node['anjuke']['svn_user']} --password=#{node['anjuke']['svn_pass']} pages"
   ]
