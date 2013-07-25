@@ -50,7 +50,7 @@ end
 execute "reload nginx" do
   user 'root'
   cmds = [
-          "/etc/init.d/nginx reload"
+          "/etc/init.d/nginx restart"
          ]
   command (cmds.join " ; ")
 end

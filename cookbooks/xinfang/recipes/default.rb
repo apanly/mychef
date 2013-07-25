@@ -1,11 +1,11 @@
 ### setup php
-include_recipe "anjuke::php"
+include_recipe "xinfang::php"
 
 ### setup php extensions
-include_recipe "anjuke::php-extension"
+include_recipe "xinfang::php-extension"
 
 ### setup php serverconfig
-include_recipe "anjuke::serverconfig"
+include_recipe "xinfang::serverconfig"
 
 ### checkout code
-include_recipe "anjuke::code"
+include_recipe "xinfang::code"
