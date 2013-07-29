@@ -70,19 +70,6 @@ execute "install php extension msgpack" do
   command (cmds.join " ; ")
 end
 
-execute "install php extension solr" do
-  user 'root'
-  cmds = [
-          "cd #{node['xinfang']['build_root']}",
-          "tar zxvf #{node['xinfang']['php_solr_source']}",
-          "cd #{node['xinfang']['build_root']}/#{node['xinfang']['php_solr_source']}",
-          "#{node['xinfang']['php_install_path']}/bin/phpize",
-          "./configure --with-php-config=#{node['xinfang']['php_install_path']}/bin/php-config",
-          "make && make install"
-  ]
-  command (cmds.join " ; ")
-end
-
 execute "install php extension php-zmq" do
   user 'root'
   cmds = [

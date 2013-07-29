@@ -7,7 +7,7 @@ default['xinfang']['home']  = '/home/developer'
 default['xinfang']['repo']  = 'git@git.corp.anjuke.com:aifang/aifang-branch'
 default['xinfang']['build_root'] = '/root/install'
 default['xinfang']['mysql_install_path'] = '/usr/local/mysql'
-default['xinfang']['php_install_path'] = '/usr/local/php_ajk'
+default['xinfang']['php_install_path'] = '/usr/local/php_xf'
 default['xinfang']['zeromq_install_path'] = '/usr/local/zeromq-2.2.0'
 
 default['xinfang']['php_source'] = 'php-5.3.17'
