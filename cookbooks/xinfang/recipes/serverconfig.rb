@@ -16,7 +16,7 @@ end
 execute "run php-fpm" do
     user 'root'
     cmds = [
-        "/usr/local/php_ajk/sbin/php-fpm"
+        "#{node['xinfang']['php_install_path']}/sbin/php-fpm"
     ]
     command (cmds.join " ; ")
 end
