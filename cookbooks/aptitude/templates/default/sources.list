@@ -1,10 +1,5 @@
-deb http://cn.archive.ubuntu.com/ubuntu/ precise main restricted
-deb http://cn.archive.ubuntu.com/ubuntu/ precise-updates main restricted
-deb http://cn.archive.ubuntu.com/ubuntu/ precise universe
-deb http://cn.archive.ubuntu.com/ubuntu/ precise-updates universe
-deb http://cn.archive.ubuntu.com/ubuntu/ precise multiverse
-deb http://cn.archive.ubuntu.com/ubuntu/ precise-updates multiverse
-deb http://cn.archive.ubuntu.com/ubuntu/ precise-backports main restricted universe multiverse
-deb http://security.ubuntu.com/ubuntu precise-security main restricted
-deb http://security.ubuntu.com/ubuntu precise-security universe
-deb http://security.ubuntu.com/ubuntu precise-security multiverse
+deb http://mirrors.corp.anjuke.com/ubuntu precise main multiverse restricted universe
+deb http://mirrors.corp.anjuke.com/ubuntu precise-updates main multiverse restricted universe
+deb http://mirrors.corp.anjuke.com/ubuntu precise-proposed main multiverse restricted universe
+deb http://mirrors.corp.anjuke.com/ubuntu precise-backports main multiverse restricted universe
+deb http://mirrors.corp.anjuke.com/ubuntu precise-security  main multiverse restricted universe
