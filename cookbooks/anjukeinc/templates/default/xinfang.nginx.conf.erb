@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name .local.dev.fang.anjuke.com .<%= @subdomain %>.dev.fang.anjuke.com;
+    server_name .local.dev.xinfang.anjuke.com .<%= @subdomain %>.dev.xinfang.anjuke.com;
     proxy_buffering off;
     proxy_set_header Host $host;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -21,7 +21,134 @@ server {
 
 server {
     listen 80;
-    server_name include.local.dev.aifcdn.com include.<%= @subdomain %>.dev.aifcdn.com;
+    server_name vip.local.dev.xinfang.anjuke.com vip.<%= @subdomain %>.dev.xinfang.anjuke.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/<%= @docuser %>/www/indexes/xinfang-sales.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-sales.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name new.local.dev.xinfang.anjuke.com new.<%= @subdomain %>.dev.xinfang.anjuke.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/<%= @docuser %>/www/indexes/xinfang-admin.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-admin.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name m.local.dev.xinfang.anjuke.com m.<%= @subdomain %>.dev.xinfang.anjuke.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/<%= @docuser %>/www/indexes/xinfang-mobile.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-mobile.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name my.local.dev.xinfang.anjuke.com my.<%= @subdomain %>.dev.xinfang.anjuke.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/<%= @docuser %>/www/indexes/xinfang-my.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-my.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name fxd.local.dev.xinfang.anjuke.com fxd.<%= @subdomain %>.dev.xinfang.anjuke.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/<%= @docuser %>/www/indexes/xinfang-fxd.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-fxd.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name fxb.local.dev.xinfang.anjuke.com fxb.<%= @subdomain %>.dev.xinfang.anjuke.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/<%= @docuser %>/www/indexes/xinfang-fxb.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-fxb.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+
+server {
+    listen 80;
+    server_name include.local.dev.xinfang.anjuke.com include.<%= @subdomain %>.dev.xinfang.anjuke.com;
     proxy_buffering off;
     proxy_set_header Host $host;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -38,11 +165,89 @@ server {
         include fastcgi_params;
         expires epoch;
     }
+
+    location /aifang-sales {
+        rewrite . /aifang-sales/index.php last;
+    }
+
+    location /aifang-sales/index.php {
+        root /home/<%= @docuser %>/www/indexes/xinfang-sales.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-sales.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /aifang-admin {
+        rewrite . /aifang-admin/index.php last;
+    }
+
+    location /aifang-admin/index.php {
+        root /home/<%= @docuser %>/www/indexes/xinfang-admin.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-admin.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /aifang-mobile {
+        rewrite . /aifang-mobile/index.php last;
+    }
+
+    location /aifang-mobile/index.php {
+        root /home/<%= @docuser %>/www/indexes/xinfang-mobile.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-mobile.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /aifang-my {
+        rewrite . /aifang-my/index.php last;
+    }
+
+    location /aifang-my/index.php {
+        root /home/<%= @docuser %>/www/indexes/xinfang-my.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-my.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /aifang-fxd {
+        rewrite . /aifang-sales/index.php last;
+    }
+
+    location /aifang-fxd/index.php {
+        root /home/<%= @docuser %>/www/indexes/xinfang-fxd.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-fxd.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /aifang-fxb {
+        rewrite . /aifang-fxb/index.php last;
+    }
+
+    location /aifang-fxb/index.php {
+        root /home/<%= @docuser %>/www/indexes/xinfang-fxb.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-fxb.php;
+        include fastcgi_params;
+        expires epoch;
+    }
 }
 
 server {
     listen 80;
-    server_name pages.local.dev.aifcdn.com pages.<%= @subdomain %>.dev.aifcdn.com;
+    server_name pages.local.dev.xinfang.anjuke.com pages.<%= @subdomain %>.dev.xinfang.anjuke.com;
     expires max;
 
     location / {
