@@ -47,6 +47,14 @@ template "mendian.nginx.conf" do
     variables(:subdomain => node['anjukeinc']['subdomain'], :docuser => node['anjukeinc']['username'])
 end
 
+template "xinfang.nginx.conf" do
+    path "/etc/nginx/conf.d/xinfang.conf"
+    owner "root"
+    group "root"
+    mode "0644"
+    variables(:subdomain => node['anjukeinc']['subdomain'], :docuser => node['anjukeinc']['username'])
+end
+
 execute "reload nginx" do
   user 'root'
   cmds = [
