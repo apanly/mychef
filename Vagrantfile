@@ -12,13 +12,12 @@ Vagrant.configure("2") do |config|
   config.vm.provision :chef_solo do |chef|
     chef.log_level = :debug
     chef.cookbooks_path = "cookbooks"
-    chef.add_recipe('locale')
     chef.add_recipe('aptitude')
     chef.add_recipe("anjukeinc")
     chef.add_recipe("anjuke")
     chef.add_recipe("haozu")
     chef.add_recipe("jinpu")
-    #chef.add_recipe("xinfang")
+    chef.add_recipe("xinfang")
     #chef.add_recipe("member")
     #chef.add_recipe("soj")
   end
