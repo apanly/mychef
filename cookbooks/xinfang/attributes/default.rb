@@ -14,6 +14,7 @@ default['xinfang']['php_source'] = 'php-5.3.17'
 default['xinfang']['php_apc_source'] = 'APC-3.1.9'
 default['xinfang']['php_memcache_source'] = 'memcache-2.2.7'
 default['xinfang']['php_msgpack_source'] = 'msgpack-0.5.5'
+default['xinfang']['php_redis_source'] = 'redis-2.2.3'
 
 default['xinfang']['code_repo'] = 'git@git.corp.anjuke.com:aifang/aifang-branch'
 default['xinfang']['page_repo'] = 'git@git.corp.anjuke.com:aifang/pages'
