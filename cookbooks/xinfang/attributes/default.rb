@@ -17,6 +17,11 @@ default['xinfang']['php_msgpack_source'] = 'msgpack-0.5.5'
 
 default['xinfang']['code_repo'] = 'git@git.corp.anjuke.com:aifang/aifang-branch'
 default['xinfang']['page_repo'] = 'git@git.corp.anjuke.com:aifang/pages'
+default['xinfang']['sys_repo'] = 'git@git.corp.anjuke.com:aifang/system'
+default['xinfang']['common_repo'] = 'git@git.corp.anjuke.com:aifang/app-3rd/app-common'
+default['xinfang']['api_share_repo'] = 'git@git.corp.anjuke.com:aifang/app-3rd/app-api-shared'
+default['xinfang']['faq_share_repo'] = 'git@git.corp.anjuke.com:aifang/app-3rd/app-faq-shared'
+default['xinfang']['member_share_repo'] = 'git@git.corp.anjuke.com:aifang/app-3rd/app-member-public'
 default['xinfang']['svn_user'] = 'devdeployer'
 default['xinfang']['svn_pass'] = 'devdeployer'
 
