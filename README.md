@@ -5,6 +5,8 @@
 
 ```
 # git clone git@git.corp.anjuke.com:yyang/anjuke-dev-environment
+```
+```
 # cd anjuke-dev-environment
 ```
 
