@@ -4,14 +4,14 @@
 把仓库拉下来
 
 ```
-$ git clone git@git.corp.anjuke.com:yyang/anjuke-dev-environment
-$ cd mychef
+# git clone git@git.corp.anjuke.com:yyang/anjuke-dev-environment
+# cd anjuke-dev-environment
 ```
 
 执行引导程序
 
 ```
-$ ruby bootstrap.rb -d yyang -p /User/yangyong/Document/website
+# ruby bootstrap.rb -d yyang -p /User/yangyong/Document/website
 ```
 
 ## 第二次启动
