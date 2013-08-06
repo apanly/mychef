@@ -15,7 +15,7 @@ option_parser = OptionParser.new do |opts|
   end
 
   opts.on('-u USER', '--user SysUser', 'Pass-in the user who will clding. User:Group') do |value|
-    options[:path] = value
+    options[:user] = value
   end
 
 end.parse!
