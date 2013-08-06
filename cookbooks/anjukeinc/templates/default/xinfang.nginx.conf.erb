@@ -84,7 +84,7 @@ server {
 
 server {
     listen 80;
-    server_name my.local.dev.xinfang.anjuke.com my.<%= @subdomain %>.dev.xinfang.anjuke.com;
+    server_name my.local.dev.xinfang.anjuke.com my.<%= @subdomain %>.dev.xinfang.anjuke.com user.<%= @subdomain %>.dev.xinfang.anjuke.com;
     proxy_buffering off;
     proxy_set_header Host $host;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

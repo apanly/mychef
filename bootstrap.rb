@@ -14,6 +14,10 @@ option_parser = OptionParser.new do |opts|
     options[:path] = value
   end
 
+  opts.on('-u USER', '--user SysUser', 'Pass-in the user who will clding. User:Group') do |value|
+    options[:path] = value
+  end
+
 end.parse!
 
 def init_userdomain(domain)
@@ -40,3 +44,7 @@ if options[:path]
 end
 
 exec 'vagrant up'
+
+if options[:user]
+	exec "chown -R #{options[:user]} #{options[:path]}"
+end
