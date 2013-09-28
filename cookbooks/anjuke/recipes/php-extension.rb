@@ -7,6 +7,7 @@ execute "install php extension bcmath" do
 	    "make && make install"
     ]
     command (cmds.join " ; ")
+    not_if "ls #{node['anjuke']['php_install_path']}"
 end
 
 execute "install php extension gd" do
@@ -18,6 +19,7 @@ execute "install php extension gd" do
             "make && make install"
     ]
     command (cmds.join " ; ")
+    not_if "ls #{node['anjuke']['php_install_path']}"
 end
 
 execute "install php extension mbstring" do
@@ -29,6 +31,7 @@ execute "install php extension mbstring" do
 	    "make && make install"
     ]
     command (cmds.join " ; ")
+    not_if "ls #{node['anjuke']['php_install_path']}"
 end
 
 execute "install php extension apc" do
@@ -42,6 +45,7 @@ execute "install php extension apc" do
           "make && make install"
   ]
   command (cmds.join " ; ")
+  not_if "ls #{node['anjuke']['php_install_path']}"
 end
 
 execute "install php extension memcache" do
@@ -55,6 +59,7 @@ execute "install php extension memcache" do
           "make && make install"
   ]
   command (cmds.join " ; ")
+  not_if "ls #{node['anjuke']['php_install_path']}"
 end
 
 execute "install php extension msgpack" do
@@ -68,6 +73,7 @@ execute "install php extension msgpack" do
           "make && make install"
   ]
   command (cmds.join " ; ")
+  not_if "ls #{node['anjuke']['php_install_path']}"
 end
 
 execute "install php extension php-zmq" do
@@ -80,4 +86,5 @@ execute "install php extension php-zmq" do
           "make && make install"
   ]
   command (cmds.join " ; ")
+  not_if "ls #{node['anjuke']['php_install_path']}"
 end

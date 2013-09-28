@@ -27,3 +27,5 @@ default['xinfang']['svn_user'] = 'devdeployer'
 default['xinfang']['svn_pass'] = 'devdeployer'
 
 default['xinfang']['subdomain'] = '{$USER}'
+
+default['xinfang']['extension_dir'] = '/lib/php/extensions/no-debug-non-zts-20090626'

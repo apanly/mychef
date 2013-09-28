@@ -6,6 +6,7 @@ execute "clone php code repo" do
           "git clone #{node['anjuke']['code_repo']} anjuke"
   ]
   command (cmds.join " ; ")
+  not_if 'ls /code | anjuke'
 end
 
 # checkout pages files

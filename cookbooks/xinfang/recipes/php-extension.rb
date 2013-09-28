@@ -7,6 +7,7 @@ execute "install php extension bcmath" do
 	    "make && make install"
     ]
     command (cmds.join " ; ")
+    not_if "#{node['xinfang']['php_install_path']}#{node['xinfang']['extension_dir']} | grep bcmath"
 end
 
 execute "install php extension gd" do
@@ -18,6 +19,8 @@ execute "install php extension gd" do
             "make && make install"
     ]
     command (cmds.join " ; ")
+    not_if "#{node['xinfang']['php_install_path']}#{node['xinfang']['extension_dir']} | grep gd"
+
 end
 
 execute "install php extension mbstring" do
@@ -29,6 +32,7 @@ execute "install php extension mbstring" do
 	    "make && make install"
     ]
     command (cmds.join " ; ")
+    not_if "#{node['xinfang']['php_install_path']}#{node['xinfang']['extension_dir']} | grep mbstring"
 end
 
 execute "install php extension apc" do
@@ -42,6 +46,7 @@ execute "install php extension apc" do
           "make && make install"
   ]
   command (cmds.join " ; ")
+  not_if "#{node['xinfang']['php_install_path']}#{node['xinfang']['extension_dir']} | grep apc"
 end
 
 execute "install php extension memcache" do
@@ -55,6 +60,7 @@ execute "install php extension memcache" do
           "make && make install"
   ]
   command (cmds.join " ; ")
+  not_if "#{node['xinfang']['php_install_path']}#{node['xinfang']['extension_dir']} | grep memcache"
 end
 
 execute "install php extension msgpack" do
@@ -68,6 +74,7 @@ execute "install php extension msgpack" do
           "make && make install"
   ]
   command (cmds.join " ; ")
+  not_if "#{node['xinfang']['php_install_path']}#{node['xinfang']['extension_dir']} | grep msgpack"
 end
 
 execute "install php extension redis" do
@@ -81,6 +88,7 @@ execute "install php extension redis" do
           "make && make install"
   ]
   command (cmds.join " ; ")
+  not_if "#{node['xinfang']['php_install_path']}#{node['xinfang']['extension_dir']} | grep redis"
 end
 
 execute "install php extension php-zmq" do
@@ -93,4 +101,5 @@ execute "install php extension php-zmq" do
           "make && make install"
   ]
   command (cmds.join " ; ")
+  not_if "#{node['xinfang']['php_install_path']}#{node['xinfang']['extension_dir']} | grep zmq"
 end

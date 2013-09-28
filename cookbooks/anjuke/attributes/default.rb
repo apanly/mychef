@@ -22,3 +22,5 @@ default['anjuke']['svn_user'] = 'devdeployer'
 default['anjuke']['svn_pass'] = 'devdeployer'
 
 default['anjuke']['subdomain'] = '{$USER}'
+
+default['anjuke']['extension_dir'] = '/lib/php/extensions/no-debug-non-zts-20090626'

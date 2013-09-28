@@ -9,4 +9,5 @@ execute "install PHP" do
           "make && make install"
          ]
   command (cmds.join " ; ")
+  not_if "ls #{node['anjuke']['php_install_path']}"
 end

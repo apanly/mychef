@@ -21,3 +21,5 @@ default['jinpu']['code_repo'] = 'git@git.corp.anjuke.com:jinpu/jinpu-site'
 default['jinpu']['page_repo'] = 'git@git.corp.anjuke.com:jinpu/pages'
 
 default['jinpu']['subdomain'] = '{$USER}'
+
+default['jinpu']['extension_dir'] = '/lib/php/extensions/no-debug-non-zts-20090626'

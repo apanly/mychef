@@ -20,3 +20,5 @@ default['haozu']['code_repo'] = 'git@git.corp.anjuke.com:haozu/haozu-site'
 default['haozu']['page_repo'] = 'git@git.corp.anjuke.com:haozu/pages'
 
 default['haozu']['subdomain'] = '{$USER}'
+
+default['haozu']['extension_dir'] = '/lib/php/extensions/no-debug-non-zts-20090626'
