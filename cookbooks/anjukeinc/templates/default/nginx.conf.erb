@@ -12,13 +12,13 @@ http {
 	tcp_nodelay on;
 	keepalive_timeout 65;
 	types_hash_max_size 2048;
-        client_max_body_size 500m;
+    client_max_body_size 500m;
 	server_names_hash_bucket_size 128;
 
 	include /etc/nginx/mime.types;
 	default_type application/octet-stream;
 
-        log_format  main  '$request_time $upstream_response_time $remote_addr - $upstream_addr  [$time_local] '
+    log_format  main  '$request_time $upstream_response_time $remote_addr - $upstream_addr  [$time_local] '
                       '$host "$request" $status $bytes_sent '
                       '"$http_referer" "$http_user_agent" "$gzip_ratio" "$http_x_forwarded_for" - "$server_addr"';
 	access_log /var/log/nginx/access.log main;
@@ -27,31 +27,31 @@ http {
 	gzip on;
 	gzip_disable "msie6";
 
-        server {
-            return 404;
+    server {
+        return 404;
+    }
+
+    server {
+        listen       8888;
+        server_name  static.<%= @subdomain %>.dev.anjuke.com;
+
+        location / {
+            root   html;
+            index  index.php index.html index.htm;
         }
 
-        server {
-            listen       80;
-            server_name  static.<%= @subdomain %>.dev.anjuke.com;
-
-            location / {
-                root   html;
-                index  index.php index.html index.htm;
-            }
-
-            location ~ \.php$ {
-                fastcgi_pass 127.0.0.1:9000;
-                fastcgi_index index.php;
-                fastcgi_param SCRIPT_FILENAME  $document_root/$fastcgi_script_name;
-                include fastcgi_params;
-            }
-
-            error_page   500 502 503 504  /50x.html;
-            location = /50x.html {
-                root   html;
-            }
+        location ~ \.php$ {
+            fastcgi_pass 127.0.0.1:9000;
+            fastcgi_index index.php;
+            fastcgi_param SCRIPT_FILENAME  $document_root/$fastcgi_script_name;
+            include fastcgi_params;
         }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
 
 	include /etc/nginx/conf.d/*.conf;
 	include /etc/nginx/sites-enabled/*;

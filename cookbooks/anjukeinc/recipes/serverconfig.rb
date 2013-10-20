@@ -55,6 +55,13 @@ template "xinfang.nginx.conf" do
     variables(:subdomain => node['anjukeinc']['subdomain'], :docuser => node['anjukeinc']['username'])
 end
 
+template "php-fpm.conf" do
+    path "#{node['anjukeinc']['php_install_path']}/etc/php-fpm.conf"
+    owner "root"
+    group "root"
+    mode "0644"
+end
+
 execute "reload nginx" do
   user 'root'
   cmds = [
