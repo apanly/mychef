@@ -106,16 +106,3 @@ pid = run/php-fpm.pid
 ; - port       (Solaris >= 10)
 ; Default Value: not set (auto detection)
 ; events.mechanism = epoll
-
-;;;;;;;;;;;;;;;;;;;;
-; Pool Definitions ; 
-;;;;;;;;;;;;;;;;;;;;
-[www]
-listen = 127.0.0.1:8999
-user = developer
-group = developer
-pm = dynamic
-pm.max_children = 5
-pm.start_servers = 2
-pm.min_spare_servers = 1
-pm.max_spare_servers = 5

@@ -7,7 +7,7 @@ include_recipe "anjukeinc::users"
 include_recipe "anjukeinc::tarball"
 
 ### export tarball
-include_recipe "anjukeinc::php-extension"
+include_recipe "anjukeinc::export-tarball"
 
 ### setup mysql
 include_recipe "anjukeinc::mysql"
@@ -22,7 +22,6 @@ include_recipe "anjukeinc::rabbitmq"
 include_recipe "anjukeinc::php"
 
 ### setup config
-### nginx配置文件按照域名划分
 include_recipe "anjukeinc::serverconfig"
 
 ### indexes and config repo

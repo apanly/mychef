@@ -38,11 +38,3 @@ remote_file node['anjukeinc']['font_share_stxihei'] do
   mode "0755"
   action :create
 end
-
-remote_file node['anjukeinc']['font_share_arial_small'] do
-  source node['anjukeinc']['font_arail_small']
-  owner 'root'
-  group 'root'
-  mode "0755"
-  action :create
-end

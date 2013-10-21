@@ -1,4 +1,4 @@
-execute "install PHP" do
+execute "export PHP" do
   user 'root'
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",
@@ -7,7 +7,7 @@ execute "install PHP" do
   command (cmds.join " ; ")
 end
 
-execute "install php extension amqp" do
+execute "export php extension amqp" do
   user 'root'
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",
@@ -16,7 +16,7 @@ execute "install php extension amqp" do
   command (cmds.join " ; ")
 end
 
-execute "install php extension apc" do
+execute "export php extension apc" do
   user 'root'
   cmds = [ 
           "cd #{node['anjukeinc']['build_root']}",
@@ -25,7 +25,7 @@ execute "install php extension apc" do
   command (cmds.join " ; ")
 end
 
-execute "install php extension memcache" do
+execute "export php extension memcache" do
   user 'root'
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",
@@ -33,7 +33,7 @@ execute "install php extension memcache" do
   command (cmds.join " ; ")
 end
 
-execute "install php extension msgpack" do
+execute "export php extension msgpack" do
   user 'root'
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",
@@ -41,7 +41,7 @@ execute "install php extension msgpack" do
   command (cmds.join " ; ")
 end
 
-execute "install php extension redis" do
+execute "export php extension redis" do
   user 'root'
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",
@@ -49,7 +49,7 @@ execute "install php extension redis" do
   command (cmds.join " ; ")
 end
 
-execute "install php extension solr" do
+execute "export php extension solr" do
   user 'root'
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",
@@ -58,7 +58,7 @@ execute "install php extension solr" do
   command (cmds.join " ; ")
 end
 
-execute "install php extension php-zmq" do
+execute "export php extension php-zmq" do
   user 'root'
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",

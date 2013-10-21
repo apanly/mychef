@@ -1,34 +1,33 @@
 
-# execute "install php index repo" do
-#   user node['anjukeinc']['username']
-#   group node['anjukeinc']['group_name']
-#   cmds = [
-#           "cd #{node['anjukeinc']['home']}",
-#           "git clone #{node['anjukeinc']['php_indexes_repo']} indexes"
-#   ]
-#   command (cmds.join " ; ")
-# end
-
-# execute "install php config repo" do
-#   user node['anjukeinc']['username']
-#   group node['anjukeinc']['group_name']
-#   cmds = [
-#           "cd #{node['anjukeinc']['home']}",
-#           "git clone #{node['anjukeinc']['php_config_repo']} config",
-#           "cd config",
-#           "echo \"<?php \\$ddnsName='#{node['anjukeinc']['subdomain']}';\" > local_config.php",
+execute "install php config repo" do
+  user node['anjukeinc']['username']
+  group node['anjukeinc']['group_name']
+  cmds = [
+          "cd #{node['anjukeinc']['home']}",
+          "git clone #{node['anjukeinc']['php_config_repo']} www",
+          "cd www/config",
+          "echo \"<?php \\$ddnsName='#{node['anjukeinc']['subdomain']}';\" > local_config.php",
           
-#   ]
-#   command (cmds.join " ; ")
-# end
+  ]
+  command (cmds.join " ; ")
+end
 
-execute "install PHP" do
+directory node['anjukeinc']['php_install_path'] + '/etc/fpm.d/' do
+  owner "root"
+  group "root"
+  mode "0644"
+  action :create
+end
+
+template "fpm.www.conf" do
+    path "#{node['anjukeinc']['php_install_path']}/etc/fpm.d/fpm.www.conf"
+    owner "root"
+    group "root"
+    mode "0644"
+end
+
+execute "start PHP" do
   user 'root'
   group 'root'
-  cmds = [
-          "mkdir #{node['anjukeinc']['php_install_path']}/etc/fpm.d",
-          "touch #{node['anjukeinc']['php_install_path']}/etc/fpm.d/test.conf",
-          "#{node['anjukeinc']['php_install_path']}/sbin/php-fpm"
-         ]
-  command (cmds.join " ; ")
+  command ("#{node['anjukeinc']['php_install_path']}/sbin/php-fpm")
 end

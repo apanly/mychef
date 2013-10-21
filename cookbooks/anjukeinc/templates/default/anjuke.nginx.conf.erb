@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name .local.dev.anjuke.com .<%= @subdomain %>.dev.anjuke.com;
+    server_name my.local.dev.anjuke.com my.<%= @subdomain %>.dev.anjuke.com;
     proxy_buffering off;
     proxy_set_header Host $host;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -10,10 +10,10 @@ server {
     }
 
     location /index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke.php;
+        root /home/<%= @docuser %>/indexes/anjuke.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/indexes/anjuke.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -23,10 +23,10 @@ server {
     }
 
     location /zufang/index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke-zufang.php;
+        root /home/<%= @docuser %>/indexes/anjuke-zufang.php;
         internal;
         fastcgi_pass 127.0.0.1:9001;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-zufang.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/indexes/anjuke-zufang.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -36,10 +36,10 @@ server {
     }
 
     location /jinpu/index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke-jinpu.php;
+        root /home/<%= @docuser %>/indexes/anjuke-jinpu.php;
         internal;
         fastcgi_pass 127.0.0.1:9002;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-jinpu.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/indexes/anjuke-jinpu.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -49,10 +49,10 @@ server {
     }
 
     location /v3/index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke-v3.php;
+        root /home/<%= @docuser %>/indexes/anjuke-v3.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-v3.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/indexes/anjuke-v3.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -70,10 +70,10 @@ server {
     }
 
     location /anjuke/index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke.php;
+        root /home/<%= @docuser %>/indexes/anjuke.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/indexes/anjuke.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -83,10 +83,10 @@ server {
     }
 
     location /zufang/index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke-zufang.php;
+        root /home/<%= @docuser %>/indexes/anjuke-zufang.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-zufang.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/indexes/anjuke-zufang.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -96,10 +96,10 @@ server {
     }
 
     location /jinpu/index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke-jinpu.php;
+        root /home/<%= @docuser %>/indexes/anjuke-jinpu.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-jinpu.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/indexes/anjuke-jinpu.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -109,10 +109,10 @@ server {
     }
 
     location /v3/index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke-v3.php;
+        root /home/<%= @docuser %>/indexes/anjuke-v3.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-v3.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/indexes/anjuke-v3.php;
         include fastcgi_params;
         expires epoch;
     }
