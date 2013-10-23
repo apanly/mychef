@@ -68,7 +68,7 @@ end
 execute "install php extension msgpack" do
   user 'root'
   cmds = [
-          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_memcache_tarball'].gsub('.tgz', '')}",
+          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_msgpack_tarball'].gsub('.tgz', '')}",
           "#{node['anjukeinc']['php_install_path']}/bin/phpize",
           "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config",
           "make && make install"

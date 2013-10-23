@@ -1,0 +1,43 @@
+server {
+    listen 80;
+    server_name .local.dev.anjuke.com .<%= @subdomain %>.dev.anjuke.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/<%= @docuser %>/www/indexes/anjuke-user.php
+        internal;
+        fastcgi_pass 127.0.0.1:9004;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/www/indexes/anjuke-user.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+}
+
+server {
+    listen 80;
+    server_name user.local.dev.anjuke.com user.<%= @subdomain %>.dev.anjuke.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/<%= @docuser %>/www/indexes/anjuke-user.php
+        internal;
+        fastcgi_pass 127.0.0.1:9004;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/www/indexes/anjuke-user.php;
+        include fastcgi_params;
+        expires epoch;
+    }   
+}
+
+
