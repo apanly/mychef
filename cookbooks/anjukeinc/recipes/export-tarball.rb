@@ -71,7 +71,7 @@ execute "export php extension uuid" do
   user 'root'
   cmds = [
           "cd #{node['anjukeinc']['build_root']}",
-          "tar zxvf #{node['anjukeinc']['php_uuid_tarball_url']}"
+          "tar zxvf #{node['anjukeinc']['php_uuid_tarball']}"
   ]
   command (cmds.join " ; ")
 end
