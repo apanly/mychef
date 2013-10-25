@@ -1,5 +1,4 @@
 # user and group
-# user and group
 default['user']['username']  = 'developer'
 default['user']['group_name']  = 'developer'
 default['user']['home']  = '/home/developer'

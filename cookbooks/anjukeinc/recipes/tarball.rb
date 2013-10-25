@@ -72,7 +72,7 @@ remote_file node['anjukeinc']['build_root'] + "/" + node['anjukeinc']['php_solr_
 end
 
 remote_file node['anjukeinc']['build_root'] + "/" + node['anjukeinc']['php_uuid_tarball'] do
-  source node['anjukeinc']['php_solr_tarball_url']
+  source node['anjukeinc']['php_uuid_tarball_url']
   owner 'root'
   group 'root'
   action :create
