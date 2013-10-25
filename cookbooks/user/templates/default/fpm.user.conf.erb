@@ -1,6 +1,6 @@
-[ajk-broker]
+[esf-user]
 
-listen = 127.0.0.1:9000
+listen = 127.0.0.1:9005
 user = <%= @phpuser %>
 group = <%= @phpgroup %>
 pm = dynamic
@@ -16,25 +16,8 @@ php_value[extension] = gd.so
 php_value[extension] = mbstring.so
 php_value[extension] = zmq.so
 
-[anjuke]
-listen = 127.0.0.1:9001
-user = <%= @phpuser %>
-group = <%= @phpgroup %>
-pm = dynamic
-pm.max_children = 5
-pm.start_servers = 2
-pm.min_spare_servers = 1
-pm.max_spare_servers = 5
-php_value[extension] = bcmath.so
-php_value[extension] = apc.so
-php_value[extension] = memcache.so
-php_value[extension] = msgpack.so
-php_value[extension] = gd.so
-php_value[extension] = mbstring.so
-php_value[extension] = zmq.so
-
-[haozu]
-listen = 127.0.0.1:9002
+[zf-user]
+listen = 127.0.0.1:9006
 user = <%= @phpuser %>
 group = <%= @phpgroup %>
 pm = dynamic
@@ -52,7 +35,7 @@ php_value[extension] = zmq.so
 php_value[extension] = redis.so
 
 [jinpu]
-listen = 127.0.0.1:9003
+listen = 127.0.0.1:9007
 user = <%= @phpuser %>
 group = <%= @phpgroup %>
 pm = dynamic

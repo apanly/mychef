@@ -12,7 +12,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu.php;
         include fastcgi_params;
         expires epoch;
@@ -33,7 +33,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu-my.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-my.php;
         include fastcgi_params;
         expires epoch;
@@ -54,7 +54,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu-iapi.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-iapi.php;
         include fastcgi_params;
         expires epoch;
@@ -75,7 +75,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu-chart.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-chart.php;
         include fastcgi_params;
         expires epoch;
@@ -96,7 +96,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu-crm.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-crm.php;
         include fastcgi_params;
         expires epoch;
@@ -117,7 +117,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu-iapi.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-iapi.php;
         include fastcgi_params;
         expires epoch;
@@ -138,7 +138,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu-4fun.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-4fun.php;
         include fastcgi_params;
         expires epoch;
@@ -159,7 +159,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu-ifx.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-ifx.php;
         include fastcgi_params;
         expires epoch;
@@ -179,7 +179,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu-mendian.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-mendian.php;
         include fastcgi_params;
         expires epoch;
@@ -200,7 +200,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu-zyx.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-zyx.php;
         include fastcgi_params;
         expires epoch;
@@ -221,7 +221,7 @@ server {
     location /web/index.php {
 	root /home/<%= @docuser %>/www/indexes/jinpu.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu.php;
         include fastcgi_params;
         expires epoch;
@@ -234,7 +234,7 @@ server {
     location /4fun/index.php {
 	root /home/<%= @docuser %>/www/indexes/jinpu-4fun.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-4fun.php;
         include fastcgi_params;
         expires epoch;
@@ -247,7 +247,7 @@ server {
     location /my/index.php {
 	root /home/<%= @docuser %>/www/indexes/jinpu-my.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-my.php;
         include fastcgi_params;
         expires epoch;
@@ -260,7 +260,7 @@ server {
     location /crm/index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu-crm.php;
 	internal;
-	fastcgi_pass 127.0.0.1:9002;
+	fastcgi_pass 127.0.0.1:9003;
 	fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-crm.php;
 	include fastcgi_params;
 	expires epoch;
@@ -273,7 +273,7 @@ server {
     location /mendian/index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu-mendian.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-mendian.php;
         include fastcgi_params;
         expires epoch;
@@ -286,7 +286,7 @@ server {
     location /vip/index.php {
         root /home/<%= @docuser %>/www/indexes/jinpu-zyx.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/jinpu-zyx.php;
         include fastcgi_params;
         expires epoch;
@@ -299,7 +299,7 @@ server {
     location /myanjuke/index.php {
         root /home/<%= @docuser %>/www/indexes/anjuke-jinpu.php;
         internal;
-        fastcgi_pass 127.0.0.1:9002;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-jinpu.php;
         include fastcgi_params;
         expires epoch;

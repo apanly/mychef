@@ -12,7 +12,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang.php;
         include fastcgi_params;
         expires epoch;
@@ -33,7 +33,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang-sales.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-sales.php;
         include fastcgi_params;
         expires epoch;
@@ -54,7 +54,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang-admin.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-admin.php;
         include fastcgi_params;
         expires epoch;
@@ -75,7 +75,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang-mobile.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-mobile.php;
         include fastcgi_params;
         expires epoch;
@@ -96,7 +96,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang-my.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-my.php;
         include fastcgi_params;
         expires epoch;
@@ -117,7 +117,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang-fxd.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-fxd.php;
         include fastcgi_params;
         expires epoch;
@@ -138,7 +138,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang-fxb.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-fxb.php;
         include fastcgi_params;
         expires epoch;
@@ -160,7 +160,7 @@ server {
     location /aifang/index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang.php;
         include fastcgi_params;
         expires epoch;
@@ -173,7 +173,7 @@ server {
     location /aifang-sales/index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang-sales.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-sales.php;
         include fastcgi_params;
         expires epoch;
@@ -186,7 +186,7 @@ server {
     location /aifang-admin/index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang-admin.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-admin.php;
         include fastcgi_params;
         expires epoch;
@@ -199,7 +199,7 @@ server {
     location /aifang-mobile/index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang-mobile.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-mobile.php;
         include fastcgi_params;
         expires epoch;
@@ -212,7 +212,7 @@ server {
     location /aifang-my/index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang-my.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-my.php;
         include fastcgi_params;
         expires epoch;
@@ -225,7 +225,7 @@ server {
     location /aifang-fxd/index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang-fxd.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-fxd.php;
         include fastcgi_params;
         expires epoch;
@@ -238,7 +238,7 @@ server {
     location /aifang-fxb/index.php {
         root /home/<%= @docuser %>/www/indexes/xinfang-fxb.php;
         internal;
-        fastcgi_pass 127.0.0.1:9003;
+        fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/xinfang-fxb.php;
         include fastcgi_params;
         expires epoch;

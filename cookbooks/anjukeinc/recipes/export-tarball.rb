@@ -66,3 +66,12 @@ execute "export php extension php-zmq" do
   ]
   command (cmds.join " ; ")
 end
+
+execute "export php extension uuid" do
+  user 'root'
+  cmds = [
+          "cd #{node['anjukeinc']['build_root']}",
+          "tar zxvf #{node['anjukeinc']['php_uuid_tarball_url']}"
+  ]
+  command (cmds.join " ; ")
+end

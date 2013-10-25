@@ -1,0 +1,18 @@
+[member]
+
+listen = 127.0.0.1:9005
+user = <%= @phpuser %>
+group = <%= @phpgroup %>
+pm = dynamic
+pm.max_children = 5
+pm.start_servers = 2
+pm.min_spare_servers = 1
+pm.max_spare_servers = 5
+php_value[extension] = bcmath.so
+php_value[extension] = apc.so
+php_value[extension] = memcache.so
+php_value[extension] = msgpack.so
+php_value[extension] = gd.so
+php_value[extension] = mbstring.so
+php_value[extension] = zmq.so
+php_value[extension] = uuid.so

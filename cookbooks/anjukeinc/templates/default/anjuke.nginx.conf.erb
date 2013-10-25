@@ -56,6 +56,32 @@ server {
         include fastcgi_params;
         expires epoch;
     }
+
+    location /usercenter {
+        rewrite . /usercenter/index.php last;
+    }
+
+    location /usercenter/index.php {
+        root /home/<%= @docuser %>/www/indexes/member.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9005;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /member {
+        rewrite . /member/index.php last;
+    }
+
+    location /member/index.php {
+        root /home/<%= @docuser %>/www/indexes/member.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9005;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
+        include fastcgi_params;
+        expires epoch;
+    }
 }
 
 server {
@@ -104,15 +130,41 @@ server {
         expires epoch;
     }
 
-    location /v3 {
-        rewrite . /v3/index.php last;
+    location /ajkbroker {
+        rewrite . /ajkbroker/index.php last;
     }
 
-    location /v3/index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke-v3.php;
+    location /ajkbroker/index.php {
+        root /home/<%= @docuser %>/www/indexes/ajk-broker.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-v3.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/ajk-broker.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /member {
+        rewrite . /member/index.php last;
+    }
+
+    location /member/index.php {
+        root /home/<%= @docuser %>/www/indexes/member.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9005;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
+    location /broker {
+        rewrite . /broker/index.php last;
+    }
+
+    location /broker/index.php {
+        root /home/<%= @docuser %>/www/indexes/member.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9005;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
         include fastcgi_params;
         expires epoch;
     }

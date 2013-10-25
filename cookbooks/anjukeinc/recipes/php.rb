@@ -119,3 +119,14 @@ execute "install php extension redis" do
   ]
   command (cmds.join " ; ")
 end
+
+execute "install php extension uuid" do
+  user 'root'
+  cmds = [
+          "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_uuid_tarball'].gsub('.tgz', '')}",
+          "#{node['anjukeinc']['php_install_path']}/bin/phpize",
+          "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config",
+          "make && make install"
+  ]
+  command (cmds.join " ; ")
+end

@@ -12,7 +12,7 @@ server {
 
     location /index.php {
         internal;
-        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_pass 127.0.0.1:9008;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/mendian.php;
         include fastcgi_params;
         expires epoch;
@@ -33,16 +33,9 @@ server {
 
     location /agency/index.php {
         internal;
-        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_pass 127.0.0.1:9008;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/mendian.php;
         include fastcgi_params;
         expires epoch;
     }
-}
-
-server {
-    listen 80;
-    server_name pages.mendian.local.dev.anjukestatic.com pages.mendian.<%= @subdomain %>.dev.anjukestatic.com;
-    root /code/pages;
-    expires max;
 }

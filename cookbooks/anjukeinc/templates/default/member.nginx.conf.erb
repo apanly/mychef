@@ -12,7 +12,7 @@ server {
 
     location /index.php {
         internal;
-        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_pass 127.0.0.1:9004;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
         include fastcgi_params;
         expires epoch;
@@ -24,7 +24,10 @@ server {
 
     location /broker/index.php {
         internal;
-        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_pass 127.0.0.1:9004;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
+        include fastcgi_params;
+        expires epoch;
     }
 }
 
@@ -42,7 +45,7 @@ server {
 
     location /member/index.php {
         internal;
-        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_pass 127.0.0.1:9004;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
         include fastcgi_params;
         expires epoch;
@@ -54,7 +57,7 @@ server {
 
     location /broker/index.php {
         internal;
-        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_pass 127.0.0.1:9004;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
         include fastcgi_params;
         expires epoch;

@@ -12,7 +12,7 @@ server {
     location /index.php {
         root /home/<%= @docuser %>/www/indexes/anjuke-user.php
         internal;
-        fastcgi_pass 127.0.0.1:9004;
+        fastcgi_pass 127.0.0.1:9005;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/www/indexes/anjuke-user.php;
         include fastcgi_params;
         expires epoch;
@@ -21,7 +21,7 @@ server {
 
 server {
     listen 80;
-    server_name user.local.dev.anjuke.com user.<%= @subdomain %>.dev.anjuke.com;
+    server_name .zu.local.dev.anjuke.com .zu.<%= @subdomain %>.dev.anjuke.com;
     proxy_buffering off;
     proxy_set_header Host $host;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -31,13 +31,54 @@ server {
     }
 
     location /index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke-user.php
+        root /home/<%= @docuser %>/www/indexes/zufang-user.php
         internal;
-        fastcgi_pass 127.0.0.1:9004;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/www/indexes/anjuke-user.php;
+        fastcgi_pass 127.0.0.1:9006;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/www/indexes/zufang-user.php;
+        include fastcgi_params;
+        expires epoch;
+    }   
+}
+
+server {
+    listen 80;
+    server_name .xzl.local.dev.anjuke.com .xzl.<%= @subdomain %>.dev.anjuke.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/<%= @docuser %>/www/indexes/jinpu-user.php
+        internal;
+        fastcgi_pass 127.0.0.1:9007;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/www/indexes/jinpu-user.php;
         include fastcgi_params;
         expires epoch;
     }   
 }
 
 
+server {
+    listen 80;
+    server_name .sp.local.dev.anjuke.com .sp.<%= @subdomain %>.dev.anjuke.com;
+    proxy_buffering off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    location /{
+        rewrite . /index.php last;
+    }
+
+    location /index.php {
+        root /home/<%= @docuser %>/www/indexes/jinpu-user.php
+        internal;
+        fastcgi_pass 127.0.0.1:9007;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/www/indexes/jinpu-user.php;
+        include fastcgi_params;
+        expires epoch;
+    }   
+}
