@@ -21,7 +21,7 @@ option_parser = OptionParser.new do |opts|
 end.parse!
 
 def init_userdomain(domain)
-  files = ['./cookbooks/anjukeinc/attributes/default.rb', './cookbooks/anjuke/attributes/default.rb', './cookbooks/haozu/attributes/default.rb', './cookbooks/jinpu/attributes/default.rb']
+  files = ['./cookbooks/anjukeinc/attributes/default.rb']
   files.each do |file|
   	text = File.read(file)
     replace = text.gsub(/\{\$USER\}/, "#{domain}")
