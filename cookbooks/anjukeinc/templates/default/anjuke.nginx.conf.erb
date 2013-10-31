@@ -45,14 +45,14 @@ server {
     }
 
     location /ajkbroker {
-        rewrite . /v3/index.php last;
+        rewrite . /ajkbroker/index.php last;
     }
 
     location /ajkbroker/index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke-v3.php;
+        root /home/<%= @docuser %>/www/indexes/ajk-broker.php;
         internal;
         fastcgi_pass 127.0.0.1:9000;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-v3.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/ajk-broker.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -62,10 +62,10 @@ server {
     }
 
     location /usercenter/index.php {
-        root /home/<%= @docuser %>/www/indexes/member.php;
+        root /home/<%= @docuser %>/www/indexes/anjuke-member.php;
         internal;
         fastcgi_pass 127.0.0.1:9005;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-member.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -75,10 +75,10 @@ server {
     }
 
     location /member/index.php {
-        root /home/<%= @docuser %>/www/indexes/member.php;
+        root /home/<%= @docuser %>/www/indexes/anjuke-member.php;
         internal;
         fastcgi_pass 127.0.0.1:9005;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-member.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -91,15 +91,28 @@ server {
     proxy_set_header Host $host;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
+    location /ajk-broker {
+        rewrite . /ajk-broker/index.php last;
+    }
+
+    location /ajk-broker/index.php {
+        root /home/<%= @docuser %>/www/indexes/anjuke.php;
+        internal;
+        fastcgi_pass 127.0.0.1:9001;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke.php;
+        include fastcgi_params;
+        expires epoch;
+    }
+
     location /anjuke {
         rewrite . /anjuke/index.php last;
     }
 
     location /anjuke/index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke.php;
+        root /home/<%= @docuser %>/www/indexes/anjuke-user.php;
         internal;
         fastcgi_pass 127.0.0.1:9001;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-user.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -111,7 +124,7 @@ server {
     location /zufang/index.php {
         root /home/<%= @docuser %>/www/indexes/anjuke-zufang.php;
         internal;
-        fastcgi_pass 127.0.0.1:9001;
+        fastcgi_pass 127.0.0.1:9002;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-zufang.php;
         include fastcgi_params;
         expires epoch;
@@ -124,7 +137,7 @@ server {
     location /jinpu/index.php {
         root /home/<%= @docuser %>/www/indexes/anjuke-jinpu.php;
         internal;
-        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_pass 127.0.0.1:9003;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-jinpu.php;
         include fastcgi_params;
         expires epoch;
@@ -148,10 +161,10 @@ server {
     }
 
     location /member/index.php {
-        root /home/<%= @docuser %>/www/indexes/member.php;
+        root /home/<%= @docuser %>/www/indexes/anjuke-member.php;
         internal;
-        fastcgi_pass 127.0.0.1:9005;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
+        fastcgi_pass 127.0.0.1:9004;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-member.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -161,10 +174,10 @@ server {
     }
 
     location /broker/index.php {
-        root /home/<%= @docuser %>/www/indexes/member.php;
+        root /home/<%= @docuser %>/www/indexes/anjuke-member-broker.php;
         internal;
-        fastcgi_pass 127.0.0.1:9005;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
+        fastcgi_pass 127.0.0.1:9004;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-member-broker.php;
         include fastcgi_params;
         expires epoch;
     }

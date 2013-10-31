@@ -19,4 +19,3 @@ default['broker']['svn_pass'] = 'devdeployer'
 default['broker']['hz_page_repo'] = 'git@git.corp.anjuke.com:haozu/pages'
 default['broker']['jp_page_repo'] = 'git@git.corp.anjuke.com:jinpu/pages'
 
-default['broker']['subdomain'] = 'yyang'

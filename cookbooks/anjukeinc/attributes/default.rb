@@ -47,8 +47,8 @@ default['anjukeinc']['php_zmq_repo'] = 'git://github.com/mkoppanen/php-zmq.git'
 default['anjukeinc']['php_solr_tarball'] = 'solr-1.0.2.tgz'
 default['anjukeinc']['php_solr_tarball_url'] = 'http://static.yyang.d.corp.anjuke.com/solr-1.0.2.tgz'
 
-default['anjukeinc']['php_uuid_tarball'] = 'uuid-1.0.3.tgz'
-default['anjukeinc']['php_uuid_tarball_url'] = 'http://static.yyang.d.corp.anjuke.com/uuid-1.0.3.tgz'
+default['anjukeinc']['php_uuid_tarball'] = 'uuid-1.6.2.tar.gz'
+default['anjukeinc']['php_uuid_tarball_url'] = 'http://static.yyang.d.corp.anjuke.com/uuid-1.6.2.tar.gz'
 
 default['anjukeinc']['font_dir'] = '/usr/share/fonts'
 default['anjukeinc']['font_arail_big'] = 'http://static.yyang.d.corp.anjuke.com/fonts/ARIAL.TTF'
@@ -62,4 +62,4 @@ default['anjukeinc']['font_share_stxihei'] = '/usr/share/fonts/STXIHEI.TTF'
 
 default['anjukeinc']['php_config_repo'] = 'git@git.corp.anjuke.com:_broker_3rd/devel-config'
 
-default['anjukeinc']['subdomain'] = 'yyang'
+default['anjukeinc']['subdomain'] = '{$USER}'

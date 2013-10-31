@@ -12,5 +12,3 @@ default['user']['svn_user'] = 'devdeployer'
 default['user']['svn_pass'] = 'devdeployer'
 default['user']['hz_page_repo'] = 'git@git.corp.anjuke.com:haozu/pages'
 default['user']['jp_page_repo'] = 'git@git.corp.anjuke.com:jinpu/pages'
-
-default['user']['subdomain'] = 'yyang'

@@ -4,16 +4,16 @@ server {
     proxy_buffering off;
     proxy_set_header Host $host;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    root /home/<%= @docuser %>/www/indexes/member.php;
 
     location /{
         rewrite . /index.php last;
     }
 
     location /index.php {
+        root /home/<%= @docuser %>/www/indexes/anjuke-member.php;
         internal;
         fastcgi_pass 127.0.0.1:9004;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-member.php;
         include fastcgi_params;
         expires epoch;
     }
@@ -23,42 +23,10 @@ server {
     }
 
     location /broker/index.php {
+        root /home/<%= @docuser %>/www/indexes/anjuke-member-broker.php;
         internal;
         fastcgi_pass 127.0.0.1:9004;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
-        include fastcgi_params;
-        expires epoch;
-    }
-}
-
-server {
-    listen 80;
-    server_name include.member.local.dev.anjukestatic.com include.member.<%= @subdomain %>.dev.anjukestatic.com;
-    proxy_buffering off;
-    proxy_set_header Host $host;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    root /home/<%= @docuser %>/www/indexes/member.php;
-
-    location /member {
-        rewrite . /member/index.php last;
-    }
-
-    location /member/index.php {
-        internal;
-        fastcgi_pass 127.0.0.1:9004;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
-        include fastcgi_params;
-        expires epoch;
-    }
-
-    location /broker {
-        rewrite . /broker/index.php last;
-    }
-
-    location /broker/index.php {
-        internal;
-        fastcgi_pass 127.0.0.1:9004;
-        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/member.php;
+        fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/indexes/anjuke-member-broker.php;
         include fastcgi_params;
         expires epoch;
     }

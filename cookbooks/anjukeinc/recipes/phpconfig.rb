@@ -26,6 +26,13 @@ template "fpm.www.conf" do
     mode "0644"
 end
 
+template "php.ini" do
+    path "#{node['anjukeinc']['php_install_path']}/lib/php.ini"
+    owner "root"
+    group "root"
+    mode "0644"
+end
+
 execute "start PHP" do
   user 'root'
   group 'root'

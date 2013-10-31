@@ -124,6 +124,8 @@ execute "install php extension uuid" do
   user 'root'
   cmds = [
           "cd #{node['anjukeinc']['build_root']}/#{node['anjukeinc']['php_uuid_tarball'].gsub('.tgz', '')}",
+          "./configure && make && make install",
+          "cd php",
           "#{node['anjukeinc']['php_install_path']}/bin/phpize",
           "./configure --with-php-config=#{node['anjukeinc']['php_install_path']}/bin/php-config",
           "make && make install"
