@@ -15,6 +15,14 @@ template "anjuke.nginx.conf" do
     variables(:subdomain => node['anjukeinc']['subdomain'], :docuser => node['anjukeinc']['username'])
 end
 
+template "user.nginx.conf" do
+    path "/etc/nginx/conf.d/user.conf"
+    owner "root"
+    group "root"
+    mode "0644"
+    variables(:subdomain => node['anjukeinc']['subdomain'], :docuser => node['anjukeinc']['username'])
+end
+
 template "haozu.nginx.conf" do
     path "/etc/nginx/conf.d/haozu.conf"
     owner "root"

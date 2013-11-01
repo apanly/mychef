@@ -10,7 +10,7 @@ server {
     }
 
     location /index.php {
-        root /home/<%= @docuser %>/www/indexes/anjuke-user.php
+        root /home/<%= @docuser %>/www/indexes/anjuke-user.php;
         internal;
         fastcgi_pass 127.0.0.1:9005;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/www/indexes/anjuke-user.php;
@@ -52,7 +52,7 @@ server {
     }
 
     location /index.php {
-        root /home/<%= @docuser %>/www/indexes/jinpu-user.php
+        root /home/<%= @docuser %>/www/indexes/jinpu-user.php;
         internal;
         fastcgi_pass 127.0.0.1:9007;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/www/indexes/jinpu-user.php;
@@ -74,7 +74,7 @@ server {
     }
 
     location /index.php {
-        root /home/<%= @docuser %>/www/indexes/jinpu-user.php
+        root /home/<%= @docuser %>/www/indexes/jinpu-user.php;
         internal;
         fastcgi_pass 127.0.0.1:9007;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/www/indexes/jinpu-user.php;
