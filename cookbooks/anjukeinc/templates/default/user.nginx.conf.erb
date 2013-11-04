@@ -31,7 +31,7 @@ server {
     }
 
     location /index.php {
-        root /home/<%= @docuser %>/www/indexes/zufang-user.php
+        root /home/<%= @docuser %>/www/indexes/zufang-user.php;
         internal;
         fastcgi_pass 127.0.0.1:9006;
         fastcgi_param SCRIPT_FILENAME /home/<%= @docuser %>/www/www/indexes/zufang-user.php;
