@@ -17,16 +17,16 @@
 ```
 
 目前暂时需要自己clone代码到本地，代码目录如下：   
-├── anjuke (_ajkrepopool/anjuke_feature)   
+├── anjuke (\_ajkrepopool/anjuke\_feature)   
 ├── broker    
-│   ├── biz (_ajkrepopool/ajk_feature)   
-│   ├── common (_broker/3rd/common)   
-│   ├── kernel (_broekr/3rd/kernel)   
-│   └── system (_broker/3rd/system)   
-├── haozu (_ajkrepopool/haozu_feature)   
-├── haozu_pages (haozu/pages)   
-├── jinpu (_ajkrepopool/jinpu_feature)   
-├── jinpu_pages (jinpu/pages)   
+│   ├── biz (\_ajkrepopool/ajk\_feature)   
+│   ├── common (\_broker/3rd/common)   
+│   ├── kernel (\_broekr/3rd/kernel)   
+│   └── system (\_broker/3rd/system)   
+├── haozu (\_ajkrepopool/haozu\_feature)   
+├── haozu\_pages (haozu/pages)   
+├── jinpu (\_ajkrepopool/jinpu\_feature)   
+├── jinpu\_pages (jinpu/pages)   
 ├── pages (svn，你懂的)   
 └── user (anjuke/v2-site)   
 
